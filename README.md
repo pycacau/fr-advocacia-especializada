@@ -159,8 +159,7 @@ npm run lint
 
 ## 👥 Equipe
 
-- **UI/UX Design**: [Lucas Vieira](https://www.linkedin.com/in/lucasjfvieira/)
-- **Desenvolvimento Frontend**: [Mauricio Fernandes](https://www.linkedin.com/in/mauricio-tejada/)
+- **UI/UX Design, Front/Backend**: Artur Maciel
 
 ## 📄 Licença
 
