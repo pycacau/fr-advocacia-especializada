@@ -101,7 +101,7 @@ FR Advocacia Especializada/
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/fr-advocacia-especializada.git
+   git clone https://github.com/pycacau/fr-advocacia-especializada.git
    cd fr-advocacia-especializada
    ```
 
