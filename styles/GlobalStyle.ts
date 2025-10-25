@@ -27,11 +27,12 @@ export const GlobalStyle = createGlobalStyle`
         &::-webkit-scrollbar {
         border-radius: 8px;
         width: 0.5rem;
-        background: rgba(37, 35, 42, 1);
+        background: linear-gradient(180deg, #1C1A22, #25272A);
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 8px;
-        background: rgba(168, 168, 170, 1);
+        background: linear-gradient(180deg, #a39185, #8b7d6b);
+        box-shadow: inset 0 0 10px rgba(163, 145, 133, 0.5);
   }
     }
 

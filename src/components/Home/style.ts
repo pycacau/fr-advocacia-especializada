@@ -21,6 +21,9 @@ export const HomeContainer = styled.section`
   .parallaxImg {
     height: 100%;
     width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(163, 145, 133, 0.2);
   }
 
   .paralaxContainer {
@@ -30,6 +33,10 @@ export const HomeContainer = styled.section`
     z-index: 1;
 
     animation: showElementLeft 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d;
   }
 
   .paralaxItem {
@@ -52,6 +59,20 @@ export const HomeContainer = styled.section`
     backdrop-filter: blur(12px);
 
     border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+
+    &:hover {
+      transform: translateY(-10px) scale(1.05) rotateX(5deg);
+      filter: drop-shadow(29px 4px 56px rgba(163, 145, 133, 0.8));
+      background: linear-gradient(
+        135deg,
+        rgba(163, 145, 133, 0.9),
+        rgba(139, 125, 107, 0.9)
+      );
+      box-shadow: 0 0 30px rgba(163, 145, 133, 0.6);
+    }
 
     p {
       font-family: 'Lato';
@@ -60,6 +81,7 @@ export const HomeContainer = styled.section`
       line-height: 29px;
       color: ${(props) => props.theme.gray200};
       opacity: 0.8;
+      transition: color 0.5s ease;
     }
 
     strong {
@@ -68,6 +90,12 @@ export const HomeContainer = styled.section`
       font-size: 2rem;
       line-height: 2.37rem;
       color: ${(props) => props.theme.gray100};
+      transition: color 0.5s ease;
+    }
+
+    &:hover p,
+    &:hover strong {
+      color: #fff;
     }
   }
 
@@ -133,6 +161,14 @@ export const HomeContainer = styled.section`
     }
   }
 
+  @media (max-width: 480px) {
+    padding: 0 1rem 0 1rem;
+
+    .paralaxContainer {
+      margin-top: 1.5rem;
+    }
+  }
+
   @keyframes showElementLeft {
     0% {
       transform: translateX(500px);
@@ -144,13 +180,11 @@ export const HomeContainer = styled.section`
   @keyframes showElementTop {
     0% {
       transform: translateY(500px);
-    }
-    50% {
-      transform: translateY(-200px);
+      opacity: 0;
     }
     100% {
-      right: -40%;
-      top: 70%;
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 `
@@ -168,6 +202,33 @@ export const HomeContent = styled.div`
 
   h1 {
     animation: showElementRight 1s;
+    position: relative;
+    cursor: pointer;
+
+    background: linear-gradient(
+      135deg,
+      ${(props) => props.theme.gray100},
+      #a39185
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(163, 145, 133, 0.3);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #a39185, #8b7d6b);
+      transition: width 0.5s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 
   p {
@@ -178,7 +239,7 @@ export const HomeContent = styled.div`
     color: #a8a8aa;
     opacity: 0.8;
 
-    animation: showElementRight 1.1s;
+    animation: showElementRight 1.1s, fadeIn 2s ease-in-out infinite alternate;
 
     width: 100%;
     max-width: 350px;
@@ -196,6 +257,46 @@ export const HomeContent = styled.div`
 
     width: 90%;
     max-width: 350px;
+
+    a {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      button {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
+          transition: left 0.5s ease;
+        }
+
+        &:hover::before {
+          left: 100%;
+        }
+      }
+    }
+
+    a:last-child:hover button {
+      background: #a39185;
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(163, 145, 133, 0.4);
+    }
   }
   @media (max-width: 1024px) or (max-height: 690px) {
     h1 {

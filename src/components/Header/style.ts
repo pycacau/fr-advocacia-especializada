@@ -18,11 +18,13 @@ export const HeaderContainer = styled.header`
   padding: 0 1rem 0 1rem;
 
   background: ${(props) => props.theme.gradientDark};
-  filter: drop-shadow(4px 21px 32px rgba(20, 20, 21, 0.25));
-  backdrop-filter: blur(8px);
+  filter: drop-shadow(4px 21px 32px #a39185);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(163, 145, 133, 0.3);
 
   @media (max-width: 600px) {
     max-height: 72px;
+    padding: 0 1rem;
   }
 `
 
@@ -85,6 +87,13 @@ export const HeaderContent = styled.div`
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
+
+    a:hover {
+      button {
+        background: #a39185;
+        color: #fff;
+      }
+    }
   }
 
   @media (max-width: 950px) {

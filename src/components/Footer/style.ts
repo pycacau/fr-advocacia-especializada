@@ -72,6 +72,14 @@ export const FooterContent = styled.div`
       border-radius: 8px;
 
       cursor: pointer;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(163, 145, 133, 0.5),
+          0 0 40px rgba(163, 145, 133, 0.3);
+      }
     }
   }
 
@@ -89,6 +97,22 @@ export const FooterContent = styled.div`
         flex-direction: column;
         align-items: flex-start;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      gap: 1.5rem;
+      padding: 2rem 0 2rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem 0 1rem;
+
+    nav {
+      gap: 1rem;
+      padding: 1.5rem 0 1.5rem 0;
     }
   }
 `

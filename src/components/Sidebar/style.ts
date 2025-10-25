@@ -21,8 +21,6 @@ export const SidebarContent = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 
-  background: ${(props) => props.theme.primaryDark};
-
   transition: display 5s;
 
   width: 100%;
@@ -32,13 +30,14 @@ export const SidebarContent = styled.div`
   z-index: 6;
 
   a {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2rem;
-    line-height: 150%;
+    display: block;
+    width: 100%;
 
-    color: ${(props) => props.theme.gray100};
+    button {
+      width: 100%;
+      text-align: left;
+      justify-content: flex-start;
+    }
   }
 
   p {
@@ -56,7 +55,7 @@ export const SidebarContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .socialNav {
@@ -64,7 +63,7 @@ export const SidebarContent = styled.div`
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem;
 
     a {
       background: linear-gradient(
@@ -84,24 +83,83 @@ export const SidebarContent = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      padding: 0.5rem;
+
+      &:hover {
+        background: rgba(163, 145, 133, 0.1);
+      }
     }
   }
 
   footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 2rem;
+    align-items: flex-start;
+    gap: 1rem;
+
+    img {
+      width: 120px;
+      height: auto;
+    }
 
     p {
       font-family: 'Fira Sans';
       font-style: normal;
       font-weight: 400;
-      font-size: 0.75rem;
+      font-size: 0.875rem;
       line-height: 150%;
 
       color: ${(props) => props.theme.gray050};
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+
+    nav {
+      gap: 1rem;
+    }
+
+    .socialNav {
+      gap: 1rem;
+    }
+
+    footer {
+      gap: 0.75rem;
+
+      img {
+        width: 100px;
+      }
+
+      p {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+
+    nav {
+      gap: 0.75rem;
+    }
+
+    .socialNav {
+      gap: 0.75rem;
+    }
+
+    footer {
+      gap: 0.5rem;
+
+      img {
+        width: 80px;
+      }
+
+      p {
+        font-size: 0.625rem;
+      }
     }
   }
 `

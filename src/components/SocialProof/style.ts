@@ -1,58 +1,146 @@
 import styled from 'styled-components'
 
 export const SocialProofContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
+  padding: 4rem 0;
 
-  margin-bottom: 10rem;
-  margin-top: 10rem;
-  padding: 6.5rem 2rem 0 2rem;
+  h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    position: relative;
+    animation: glow 2s ease-in-out infinite alternate;
 
-  width: 100%;
-  max-width: 1224px;
-
-  .branchImg {
-    position: absolute;
-    left: -8%;
-    top: -60%;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-
-    .branchImg {
-      display: none;
-    }
-
-    button {
-      align-self: center;
-      width: 100%;
-      max-width: 312px !important;
-    }
-
-    h1 {
-      font-size: 3rem;
-    }
-
-    h1 ~ p {
-      text-align: center;
+    &:after {
+      content: '';
+      width: 60px;
+      height: 2px;
+      background: #a39185;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
-  @media (max-width: 670px) {
-    h1 {
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+
+    h2 {
       font-size: 2rem;
     }
-  }
-  @media (max-width: 470px) {
-    margin-bottom: 2rem;
 
-    h1 ~ p {
-      text-align: left;
+    .testimonials-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  @keyframes glow {
+    0%,
+    100% {
+      text-shadow: 0 0 10px rgba(163, 145, 133, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(163, 145, 133, 0.8),
+        0 0 30px rgba(163, 145, 133, 0.6);
+    }
+  }
+`
+
+export const TestimonialCard = styled.div`
+  background: linear-gradient(
+    135deg,
+    rgba(163, 145, 133, 0.1),
+    rgba(28, 28, 28, 0.9)
+  );
+  border: 1px solid rgba(163, 145, 133, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .quote-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0.75rem;
+    opacity: 0.7;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-style: italic;
+    flex-grow: 1;
+  }
+
+  .author {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+
+    strong {
+      color: #a39185;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+    height: 250px;
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+`
+
+export const StarRating = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+
+  .star {
+    color: rgba(163, 145, 133, 0.3);
+    font-size: 1.2rem;
+
+    &.filled {
+      color: #a39185;
     }
   }
 `
@@ -146,8 +234,7 @@ export const SocialProofCard = styled.div`
     ${(props) => props.theme.gradientBorder} border-box;
   border-radius: 8px;
   border: 1px solid transparent;
-  box-shadow: 16px 0px 48px rgba(20, 20, 21, 0.25),
-    -16px 0px 48px rgba(20, 20, 21, 0.25);
+  box-shadow: 16px 0px 48px #a39185, -16px 0px 48px #a39185;
 
   padding: 2rem;
   gap: 2rem;
@@ -188,5 +275,53 @@ export const SocialProofCard = styled.div`
 
   @media (max-width: 670px) {
     transform: scale(1);
+  }
+`
+
+export const TestimonialSection = styled.div`
+  .testimonial-content {
+    padding: 1rem;
+    margin: 0;
+  }
+`
+
+export const TestimonialWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+
+  button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .testimonial-content {
+    text-align: center;
+    max-width: 800px;
+
+    p {
+      color: #fff;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    strong {
+      color: #a39185;
+      font-size: 1.1rem;
+      display: block;
+    }
   }
 `

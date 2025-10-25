@@ -31,10 +31,11 @@ export function Services() {
               <h3>Direito Empresarial do trabalho</h3>
             </div>
             <p className="description">
-              quisque suscipit per quisque suscipita ptent fusce dictum
-              porttitor auctor suscipit a adipiscing quisque suscipit.
+              Oferecemos assessoria jurídica completa para empresas, incluindo
+              contratos, negociações, fusões e aquisições, garantindo a proteção
+              dos interesses empresariais e o cumprimento das leis trabalhistas.
             </p>
-            <p className="casesCount">225 Casos solucionados</p>
+            <p className="casesCount">85 Casos solucionados</p>
           </div>
           <img
             className="arrow"
@@ -54,10 +55,11 @@ export function Services() {
               <h3>Direito de família</h3>
             </div>
             <p className="description">
-              quisque suscipit per quisque suscipita ptent fusce dictum
-              porttitor auctor suscipit a adipiscing quisque suscipit.
+              Atuamos em questões familiares como divórcio, guarda de filhos,
+              pensão alimentícia e partilha de bens, buscando sempre soluções
+              que preservem o bem-estar de todos os envolvidos.
             </p>
-            <p className="casesCount">225 Casos solucionados</p>
+            <p className="casesCount">62 Casos solucionados</p>
           </div>
           <img
             className="arrow"
@@ -77,10 +79,11 @@ export function Services() {
               <h3>Direito tributário</h3>
             </div>
             <p className="description">
-              quisque suscipit per quisque suscipita ptent fusce dictum
-              porttitor auctor suscipit a adipiscing quisque suscipit.
+              Prestamos consultoria especializada em planejamento tributário,
+              defesa em autuações fiscais e recuperação de créditos, otimizando
+              a carga tributária de empresas e pessoas físicas.
             </p>
-            <p className="casesCount">225 Casos solucionados</p>
+            <p className="casesCount">47 Casos solucionados</p>
           </div>
           <img
             className="arrow"
@@ -100,10 +103,11 @@ export function Services() {
               <h3>Direito digital</h3>
             </div>
             <p className="description">
-              quisque suscipit per quisque suscipita ptent fusce dictum
-              porttitor auctor suscipit a adipiscing quisque suscipit.
+              Protegemos direitos digitais, incluindo privacidade de dados,
+              propriedade intelectual online, contratos digitais e defesa contra
+              crimes cibernéticos.
             </p>
-            <p className="casesCount">225 Casos solucionados</p>
+            <p className="casesCount">33 Casos solucionados</p>
           </div>
           <img
             className="arrow"
@@ -123,10 +127,11 @@ export function Services() {
               <h3>Registro de marcas e patentes</h3>
             </div>
             <p className="description">
-              quisque suscipit per quisque suscipita ptent fusce dictum
-              porttitor auctor suscipit a adipiscing quisque suscipit.
+              Realizamos o registro e proteção de marcas, patentes e direitos
+              autorais, assegurando a propriedade intelectual de empresas e
+              criadores.
             </p>
-            <p className="casesCount">225 Casos solucionados</p>
+            <p className="casesCount">54 Casos solucionados</p>
           </div>
           <img
             className="arrow"
@@ -146,10 +151,11 @@ export function Services() {
               <h3>Cobrança extrajudicial</h3>
             </div>
             <p className="description">
-              quisque suscipit per quisque suscipita ptent fusce dictum
-              porttitor auctor suscipit a adipiscing quisque suscipit.
+              Realizamos cobranças extrajudiciais eficientes, utilizando
+              negociações e acordos para recuperar dívidas de forma rápida e
+              econômica.
             </p>
-            <p className="casesCount">225 Casos solucionados</p>
+            <p className="casesCount">71 Casos solucionados</p>
           </div>
           <img
             className="arrow"

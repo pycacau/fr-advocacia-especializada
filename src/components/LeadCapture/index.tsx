@@ -98,7 +98,10 @@ export function LeadCapture() {
               <p>{formState.errors.caso?.message}</p>
             </InputContainer>
 
-            <DefaultButton type="submit">
+            <DefaultButton
+              type="submit"
+              style={{ backgroundColor: '#a39185', color: '#fff' }}
+            >
               Enviar consulta gratuita
             </DefaultButton>
           </form>

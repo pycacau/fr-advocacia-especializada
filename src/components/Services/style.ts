@@ -58,7 +58,13 @@ export const ServicesContainer = styled.section`
     }
   }
 
+  @media (max-width: 768px) {
+    padding: 80px 1.5rem 0 1.5rem;
+    margin-bottom: 8rem;
+  }
+
   @media (max-width: 580px) {
+    padding: 60px 1rem 0 1rem;
     margin-bottom: 2rem;
   }
 `
@@ -141,6 +147,18 @@ export const ServiceCard = styled.div`
       animation: toTop 0.5s;
       transform: translate(0, 0);
     }
+
+    box-shadow: 0 0 40px rgba(163, 145, 133, 0.8),
+      0 0 80px rgba(163, 145, 133, 0.4);
+    transform: scale(1.08) rotate(1deg);
+    transition: all 0.5s ease;
+    background: linear-gradient(
+          135deg,
+          rgba(163, 145, 133, 0.1),
+          rgba(139, 125, 107, 0.1)
+        )
+        padding-box,
+      ${(props) => props.theme.gradientBorder} border-box;
   }
 
   h3 {

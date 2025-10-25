@@ -14,10 +14,30 @@ export function Home() {
           atendimento especialmente para você
         </p>
         <div className="buttonContainer">
-          <a href="#services">
-            <DefaultButton>Vamos começar</DefaultButton>
+          <a
+            href="#services"
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById('services')
+              if (element)
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+          >
+            <DefaultButton
+              style={{ backgroundColor: '#a39185', color: '#fff' }}
+            >
+              Vamos começar
+            </DefaultButton>
           </a>
-          <a href="#services">
+          <a
+            href="#services"
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById('services')
+              if (element)
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+          >
             <InvisibleButton>Saber mais</InvisibleButton>
           </a>
         </div>
@@ -25,10 +45,6 @@ export function Home() {
 
       <div className="homeBg">
         <div className="paralaxContainer">
-          <Parallax className="paralaxItem" speed={-10}>
-            <p>Trabalhamos em prol da</p>
-            <strong>Justiça</strong>
-          </Parallax>
           <img
             width={452}
             height={716}
@@ -36,6 +52,10 @@ export function Home() {
             src={homeImg}
             alt="estatua justiça"
           />
+          <Parallax className="paralaxItem" speed={-10}>
+            <p>Trabalhamos em prol da</p>
+            <strong>Justiça</strong>
+          </Parallax>
         </div>
       </div>
 

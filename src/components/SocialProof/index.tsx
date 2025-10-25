@@ -1,70 +1,45 @@
-import {
-  CardContainer,
-  Content,
-  SocialProofCard,
-  SocialProofContainer,
-} from './style'
-import commentImg from '../../assets/comment_icon.svg'
-import { DefaultButton } from '../Buttons/Buttons'
-import branchBgImg from '../../assets/social_proof_branch.png'
+import { SocialProofContainer, TestimonialCard, StarRating } from './style'
+import commentIcon from '../../assets/comment_icon.svg'
+const testimonials = [
+  {
+    text: 'Quando pensei que tudo estava perdido, o Dr. Roney apareceu como um salvador. Orientou-me em cada passo e lutou pelo meu direito. Recuperei minha paz graças ao seu trabalho excepcional.',
+    author: 'Carlos Silva',
+    rating: 5
+  },
+  {
+    text: 'Nunca imaginei que um advogado pudesse ser tão humano. O Dr. Roney me apoiou o tempo todo, explicando tudo de forma simples e sempre disponível. Recomendo sem hesitar.',
+    author: 'Maria Santos',
+    rating: 5
+  },
+  {
+    text: 'Contratei o Dr. Roney para um caso complicado e ele superou expectativas. Estratégia brilhante e resultado melhor que esperado. Profissionalismo aliado a preocupação genuína.',
+    author: 'João Oliveira',
+    rating: 5
+  }
+]
 
 export function SocialProof() {
-  return (
-    <SocialProofContainer id="depoimentos">
-      <Content>
-        <h1>Depoimentos de nossos clientes</h1>
-        <p>
-          Muitos clientes estão felizes em trabalhar conosco e estão apreciando
-          nosso trabalho.{' '}
-        </p>
-        <a
-          href="http://api.whatsapp.com/send?1=pt_BR&phone=55000000000000"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <DefaultButton>Fale conosco</DefaultButton>
-        </a>
-      </Content>
-      <CardContainer>
-        <SocialProofCard>
-          <div className="header">
-            <p className="name">Lucas Vieira</p>
-            <img src={commentImg} alt="comentario" />
-          </div>
-          <p className="content">
-            O advogado Antônio Júnior foi um recurso inestimável quando se
-            tratava de proteger meus direitos no tribunal. Sua atenção aos
-            detalhes e conhecimento das leis são insuperáveis. Eu a recomendaria
-            muito.
-          </p>
-        </SocialProofCard>
-        <SocialProofCard className="currentCard">
-          <div className="header">
-            <p className="name">Lucas Vieira</p>
-            <img src={commentImg} alt="comentario" />
-          </div>
-          <p className="content">
-            O advogado Antônio Júnior foi um recurso inestimável quando se
-            tratava de proteger meus direitos no tribunal. Sua atenção aos
-            detalhes e conhecimento das leis são insuperáveis. Eu a recomendaria
-            muito.
-          </p>
-        </SocialProofCard>
-        <SocialProofCard>
-          <div className="header">
-            <p className="name">Lucas Vieira</p>
-            <img src={commentImg} alt="comentario" />
-          </div>
-          <p className="content">
-            O advogado Antônio Júnior foi um recurso inestimável quando se
-            tratava de proteger meus direitos no tribunal. Sua atenção aos
-            detalhes e conhecimento das leis são insuperáveis. Eu a recomendaria
-            muito.
-          </p>
-        </SocialProofCard>
-      </CardContainer>
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, i) => (
+      <span key={i} className={i < rating ? 'star filled' : 'star'}>★</span>
+    ))
+  }
 
-      <img className="branchImg" src={branchBgImg} alt="ramo defundo" />
+  return (
+    <SocialProofContainer>
+      <h2>Depoimentos</h2>
+      <div className="testimonials-grid">
+        {testimonials.map((testimonial, index) => (
+          <TestimonialCard key={index}>
+            <img src={commentIcon} alt="Quote" className="quote-icon" />
+            <p>{testimonial.text}</p>
+            <StarRating>{renderStars(testimonial.rating)}</StarRating>
+            <div className="author">
+              <strong>{testimonial.author}</strong>
+            </div>
+          </TestimonialCard>
+        ))}
+      </div>
     </SocialProofContainer>
   )
 }

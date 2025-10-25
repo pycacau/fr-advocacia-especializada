@@ -1,9 +1,10 @@
 import linkedinImg from '../../assets/in_white.svg'
 import faceImg from '../../assets/face-white.svg'
 import instaImg from '../../assets/insta-white.svg'
-import logoSidebarImg from '../../assets/logo-sidebar.svg'
+import logoSidebarImg from '../../assets/logo_small.svg'
 import { Sidebar as SidebarContainer } from 'primereact/sidebar'
 import { SidebarButton, SidebarContent } from './style'
+import { SmallInvisibleButton, SmallOutlineButton } from '../Buttons/Buttons'
 import { useState } from 'react'
 import 'primereact/resources/themes/lara-light-indigo/theme.css' // theme
 import 'primereact/resources/primereact.min.css' // core css
@@ -21,31 +22,36 @@ export function Sidebar() {
         alt="mostrar sidebar"
       ></SidebarButton>
       <SidebarContainer
-        style={{ background: 'rgba(97, 52, 203, 1)' }}
+        style={{
+          background: 'rgba(28, 28, 28, 0.95)',
+          backdropFilter: 'blur(10px)',
+          border: 'none',
+        }}
         visible={visibleLeft}
         fullScreen
         onHide={() => setVisibleLeft(false)}
       >
         <SidebarContent>
           <nav>
-            <a href="#depoimentos" onClick={() => setVisibleLeft(false)}>
-              Depoimentos
+            <a href="#home">
+              <SmallInvisibleButton>Home</SmallInvisibleButton>
             </a>
-            <a href="#contato" onClick={() => setVisibleLeft(false)}>
-              Contato
+            <a href="#cta">
+              <SmallInvisibleButton>Sobre mim</SmallInvisibleButton>
             </a>
-            <a href="#services" onClick={() => setVisibleLeft(false)}>
-              Áreas de atuação
+            <a href="#services">
+              <SmallInvisibleButton>Áreas de atuação</SmallInvisibleButton>
             </a>
-            <a href="#home" onClick={() => setVisibleLeft(false)}>
-              Home
+            <a href="./Login Site/index.html">
+              <SmallInvisibleButton>Meus processos</SmallInvisibleButton>
             </a>
             <a
-              href="http://api.whatsapp.com/send?1=pt_BR&phone=55051991276728"
+              href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173"
               target="_blank"
               rel="noreferrer"
+              onClick={() => setVisibleLeft(false)}
             >
-              Entrar em contato
+              <SmallOutlineButton>Entrar em contato</SmallOutlineButton>
             </a>
 
             <nav className="socialNav">
@@ -74,10 +80,7 @@ export function Sidebar() {
           </nav>
           <footer>
             <img src={logoSidebarImg} alt="logomarca Antonio" />
-            <p>
-              Empresa de advocacia especializada em resolver problemas
-              jurídicos.
-            </p>
+            <p>Empresa de advocacia especializada</p>
           </footer>
         </SidebarContent>
       </SidebarContainer>

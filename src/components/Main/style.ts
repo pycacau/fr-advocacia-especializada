@@ -8,8 +8,17 @@ export const MainContainer = styled.main`
   gap: 2rem;
 
   background: #1c1a22;
+
   @media (max-width: 820px) {
     overflow-x: hidden;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
   }
 `
 

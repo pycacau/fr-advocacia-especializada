@@ -21,8 +21,18 @@ export const LeadCaptureContainer = styled.section`
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 768px) {
+    height: 800px;
+    margin: 10rem 0 10rem 0;
+  }
+
   @media (max-width: 700px) {
     height: 900px;
+  }
+
+  @media (max-width: 480px) {
+    height: 850px;
+    margin: 8rem 0 8rem 0;
   }
 `
 

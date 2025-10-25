@@ -2,7 +2,6 @@ import { CTA } from '../CTA'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 import { Home } from '../Home'
-import { LeadCapture } from '../LeadCapture'
 import { Services } from '../Services'
 import { SocialProof } from '../SocialProof'
 import { ChatPopup, MainContainer, SocialLinks } from './style'
@@ -13,6 +12,13 @@ import wppImg from '../../assets/wpp-icon.svg'
 import { Sidebar } from '../Sidebar'
 
 export function Main() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <MainContainer>
       <Header />
@@ -20,31 +26,7 @@ export function Main() {
       <Home />
       <Services />
       <CTA />
-      <SocialLinks>
-        <nav>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/antonio-junior-adv/"
-            rel="noreferrer"
-          >
-            <img width={40} height={40} src={linkedinImg} alt="linkedin" />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.facebook.com/antoniojradv"
-            rel="noreferrer"
-          >
-            <img width={40} height={40} src={faceImg} alt="facebook" />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/antoniojunioradvocacia/"
-            rel="noreferrer"
-          >
-            <img width={40} height={40} src={instaImg} alt="instagram" />
-          </a>
-        </nav>
-      </SocialLinks>
+      <SocialProof />
       <ChatPopup>
         <a
           href="http://api.whatsapp.com/send?1=pt_BR&phone=55000000000000"
@@ -54,8 +36,6 @@ export function Main() {
           <img src={wppImg} alt="whatsapp" />
         </a>
       </ChatPopup>
-      <SocialProof />
-      <LeadCapture />
       <Footer />
     </MainContainer>
   )

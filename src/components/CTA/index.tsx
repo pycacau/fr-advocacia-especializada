@@ -1,11 +1,11 @@
 import { Content, CTAContainer } from './style'
-import ctaImg from '../../assets/CTA.png'
+import ctaImg from '../../assets/roney.png'
 import { DefaultButton } from '../Buttons/Buttons'
 import branchBgImg from '../../assets/branch_bg.png'
 
 export function CTA() {
   return (
-    <CTAContainer>
+    <CTAContainer id="cta">
       <Content>
         <img
           width={496}
@@ -14,19 +14,14 @@ export function CTA() {
           alt="balança simbolo da justiça"
         />
         <div>
-          <h1>Sua justiça é a nossa prioridade</h1>
+          <h1>Sobre mim</h1>
           <p>
-            Garantimos a defesa de seus direitos e podemos ajudá-lo a encontrar
-            a solução ideal para o seu problema. Entre em contato conosco para
-            obter mais informações.
+            Sou advogado com mais de 10 anos de experiência em diversas áreas do
+            direito. Graduado pela Universidade Federal, pós-graduado em Direito
+            Empresarial e Tributário. Atuo com dedicação para garantir justiça,
+            proteção e soluções eficazes aos meus clientes, sempre priorizando a
+            ética e a transparência em cada caso.
           </p>
-          <a
-            href="http://api.whatsapp.com/send?1=pt_BR&phone=55000000000000"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <DefaultButton>Entrar em contato</DefaultButton>
-          </a>
         </div>
         <img className="branchBg" src={branchBgImg} alt="ramo de fundo" />
       </Content>

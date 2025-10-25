@@ -1,8 +1,6 @@
 import { FooterContainer, FooterContent } from './style'
 import logoImg from '../../assets/logo_gray.svg'
-import linkedinImg from '../../assets/linkedin_icon.svg'
-import faceImg from '../../assets/face_icon.svg'
-import instaImg from '../../assets/insta_icon.svg'
+import { FaLinkedin, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 export function Footer() {
   return (
@@ -11,31 +9,31 @@ export function Footer() {
         <div>
           <img width={54} height={48} src={logoImg} alt="logomarca antonio" />
           <div>
-            <p>Antônio Júnior ©</p>
-            <p>Advocacia e consultoria jurídica</p>
+            <p>Francisco Roney ©</p>
+            <p>Advocacia Especializada</p>
           </div>
         </div>
         <nav>
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/antonio-junior-adv/"
+            href="http://linkedin.com/in/francisco-roney-de-sousa-ribeiro-33aa9185/?originalSubdomain=br"
             rel="noreferrer"
           >
-            <img width={40} height={40} src={linkedinImg} alt="linkedin" />
+            <FaLinkedin size={24} color="white" />
           </a>
           <a
             target="_blank"
-            href="https://www.facebook.com/antoniojradv"
+            href="http://facebook.com/nsfadvogados/"
             rel="noreferrer"
           >
-            <img width={40} height={40} src={faceImg} alt="facebook" />
+            <FaFacebookF size={24} color="white" />
           </a>
           <a
             target="_blank"
-            href="https://www.instagram.com/antoniojunioradvocacia/"
+            href="https://www.instagram.com/roneysousa/"
             rel="noreferrer"
           >
-            <img width={40} height={40} src={instaImg} alt="instagram" />
+            <FaInstagram size={24} color="white" />
           </a>
         </nav>
       </FooterContent>
