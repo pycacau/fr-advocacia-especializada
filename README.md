@@ -169,7 +169,4 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 <div align="center">
   <p>Feito com ❤️ para Francisco Roney Advocacia Especializada</p>
-  <p>
-    <a href="#-francisco-roney---advocacia-especializada">Voltar ao topo</a>
-  </p>
 </div>
