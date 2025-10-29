@@ -3,12 +3,593 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - FR Advocacia Especializada</title>
+  <title>FR Advocacia Especializada - Justiça e Excelência</title>
   <link rel="icon" type="image/png" href="public/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="assets/logo_small.svg" alt="FR Advocacia Especializada" class="logo-img">
+          <span class="logo-text">FR Advocacia</span>
+        </div>
+
+        <div class="nav-menu">
+          <a href="#home" class="nav-link">Início</a>
+          <a href="#servicos" class="nav-link">Serviços</a>
+          <a href="#sobre" class="nav-link">Sobre</a>
+          <a href="#consulta" class="nav-link">Consulta</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173" target="_blank" class="cta-button">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+            Contato
+          </a>
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>🏛️ Justiça e Excelência</span>
+          </div>
+          <h1 class="hero-title">
+            Advocacia Especializada em
+            <span class="highlight">Direito Civil</span>
+          </h1>
+          <p class="hero-subtitle">
+            Mais de 15 anos de experiência defendendo seus direitos com dedicação,
+            ética e resultados comprovados. Sua justiça começa aqui.
+          </p>
+          <div class="hero-actions">
+            <a href="#consulta" class="primary-button">
+              Consultar Processo
+              <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#contato" class="secondary-button">
+              Agendar Consulta
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image">
+            <img src="assets/logo_extends.svg" alt="FR Advocacia Especializada" class="hero-logo">
+          </div>
+          <div class="floating-elements">
+            <div class="floating-card card-1">
+              <div class="card-icon">⚖️</div>
+              <div class="card-text">Justiça</div>
+            </div>
+            <div class="floating-card card-2">
+              <div class="card-icon">📋</div>
+              <div class="card-text">Transparência</div>
+            </div>
+            <div class="floating-card card-3">
+              <div class="card-icon">🎯</div>
+              <div class="card-text">Resultados</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg-pattern"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nossos Serviços</h2>
+          <p class="section-subtitle">Soluções jurídicas completas para suas necessidades</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3 class="service-title">Direito Imobiliário</h3>
+            <p class="service-description">
+              Assessoria completa em compra, venda, locação e regularização de imóveis.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3 class="service-title">Direito Empresarial</h3>
+            <p class="service-description">
+              Constituição de empresas, contratos comerciais e assessoria societária.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">👨‍👩‍👧‍👦</div>
+            <h3 class="service-title">Direito de Família</h3>
+            <p class="service-description">
+              Divórcio, guarda de filhos, pensão alimentícia e inventário.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🚗</div>
+            <h3 class="service-title">Direito do Consumidor</h3>
+            <p class="service-description">
+              Defesa dos seus direitos como consumidor contra práticas abusivas.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">📄</div>
+            <h3 class="service-title">Direito Trabalhista</h3>
+            <p class="service-description">
+              Ações trabalhistas, rescisão contratual e direitos do trabalhador.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3 class="service-title">Consulta Processual</h3>
+            <p class="service-description">
+              Acompanhe o andamento dos seus processos de forma rápida e segura.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="section-title">Sobre Francisco Roney</h2>
+            <p class="about-description">
+              Advogado com mais de 15 anos de experiência, especializado em Direito Civil
+              e comprometido com a defesa intransigente dos direitos dos seus clientes.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Anos de Experiência</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Casos Resolvidos</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfação dos Clientes</div>
+              </div>
+            </div>
+            <a href="#contato" class="primary-button">
+              Conheça Nossa História
+            </a>
+          </div>
+          <div class="about-image">
+            <div class="image-placeholder">
+              <div class="placeholder-icon">👨‍⚖️</div>
+              <div class="placeholder-text">Foto do Advogado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consulta Section -->
+    <section id="consulta" class="consulta">
+      <div class="container">
+        <div class="consulta-content">
+          <div class="consulta-info">
+            <h2 class="section-title">Consulta de Processo</h2>
+            <p class="consulta-description">
+              Acompanhe o andamento dos seus casos jurídicos de forma segura e prática.
+              Basta informar o número do processo para obter informações atualizadas.
+            </p>
+            <div class="consulta-features">
+              <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <span>100% Seguro</span>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <span>Rápido</span>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">📱</div>
+                <span>24/7 Disponível</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="consulta-form-container">
+            <form id="consultaForm" class="consulta-form">
+              <div class="form-header">
+                <h3>Consultar Processo</h3>
+                <p>Digite o número do processo</p>
+              </div>
+
+              <div class="form-group">
+                <label for="processo" class="form-label">Número do Processo</label>
+                <div class="input-group">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                  </svg>
+                  <input
+                    type="text"
+                    id="processo"
+                    name="processo"
+                    class="form-input"
+                    placeholder="Ex: 0001234-56.2023.8.06.0001"
+                    required
+                  >
+                </div>
+              </div>
+
+              <button type="submit" class="submit-button">
+                <span class="button-text">Consultar Processo</span>
+                <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">O que nossos clientes dizem</h2>
+          <p class="section-subtitle">Histórias de sucesso e satisfação</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Excelente profissional! Resolveu meu caso de divórcio com maestria e discrição. Recomendo fortemente."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div class="author-info">
+                <div class="author-name">Maria Silva</div>
+                <div class="author-role">Cliente</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Atendimento impecável e resultados surpreendentes. O Dr. Francisco é um verdadeiro profissional."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">J</div>
+              <div class="author-info">
+                <div class="author-name">João Santos</div>
+                <div class="author-role">Cliente Empresarial</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Transparência total no processo e dedicação excepcional. Minha confiança foi plenamente recompensada."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div class="author-info">
+                <div class="author-name">Ana Costa</div>
+                <div class="author-role">Cliente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+      <div class="container">
+        <div class="contact-content">
+          <div class="contact-info">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="contact-description">
+              Estamos aqui para ajudar. Entre em contato conosco para agendar uma consulta
+              ou tirar suas dúvidas.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-text">
+                  <div class="contact-label">Telefone</div>
+                  <div class="contact-value">(88) 99945-3173</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-text">
+                  <div class="contact-label">Email</div>
+                  <div class="contact-value">contato@fradvocacia.com.br</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-text">
+                  <div class="contact-label">Localização</div>
+                  <div class="contact-value">Juazeiro do Norte, CE</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="http://linkedin.com/in/francisco-roney-de-sousa-ribeiro-33aa9185/?originalSubdomain=br" target="_blank" class="social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/>
+                </svg>
+              </a>
+              <a href="http://facebook.com/nsfadvogados/" target="_blank" class="social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/roneysousa/" target="_blank" class="social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.017 0C8.396 0 7.996.014 6.79.067 5.584.12 4.775.302 4.082.566c-.726.28-1.34.639-1.955 1.255C1.512 2.437 1.153 3.051.873 3.777c-.264.693-.446 1.502-.5 2.708C.314 7.691.3 8.091.3 11.712s.014 3.996.067 5.202c.054 1.206.236 2.015.5 2.708.28.726.639 1.34 1.255 1.955.615.616 1.229.975 1.955 1.255.693.264 1.502.446 2.708.5C7.996 23.686 8.396 23.7 12.017 23.7s3.996-.014 5.202-.067c1.206-.054 2.015-.236 2.708-.5.726-.28 1.34-.639 1.955-1.255.616-.615.975-1.229 1.255-1.955.264-.693.446-1.502.5-2.708.053-1.206.067-1.606.067-5.227s-.014-3.997-.067-5.202c-.054-1.206-.236-2.015-.5-2.708-.28-.726-.639-1.34-1.255-1.955C20.488 1.563 19.874.924 19.148.644c-.693-.264-1.502-.446-2.708-.5C15.021.314 14.621.3 12 .3zm0 2.163c3.574 0 3.997.014 5.403.08 1.325.062 2.044.28 2.508.467.463.187.868.432 1.254.818.386.386.631.791.818 1.254.187.464.405 1.183.467 2.508.066 1.406.08 1.829.08 5.403s-.014 3.997-.08 5.403c-.062 1.325-.28 2.044-.467 2.508-.187.463-.432.868-.818 1.254-.386.386-.791.631-1.254.818-.464.187-1.183.405-2.508.467-1.406.066-1.829.08-5.403.08s-3.997-.014-5.403-.08c-1.325-.062-2.044-.28-2.508-.467-.463-.187-.868-.432-1.254-.818-.386-.386-.631-.791-.818-1.254-.187-.464-.405-1.183-.467-2.508C2.18 15.709 2.166 15.286 2.166 11.712s.014-3.997.08-5.403c.062-1.325.28-2.044.467-2.508.187-.463.432-.868.818-1.254.386-.386.791-.631 1.254-.818.464-.187 1.183-.405 2.508-.467C8.02 2.477 8.443 2.463 12.017 2.463zm0 3.788c-3.719 0-6.75 3.031-6.75 6.75s3.031 6.75 6.75 6.75 6.75-3.031 6.75-6.75-3.031-6.75-6.75-6.75zm0 11.137c-2.406 0-4.362-1.956-4.362-4.362s1.956-4.362 4.362-4.362 4.362 1.956 4.362 4.362-1.956 4.362-4.362 4.362zm8.466-11.388c-.924 0-1.674.75-1.674 1.674s.75 1.674 1.674 1.674 1.674-.75 1.674-1.674-.75-1.674-1.674-1.674z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <form class="contact-form">
+              <h3>Envie sua mensagem</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" id="nome" name="nome" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="assunto" class="form-label">Assunto</label>
+                <input type="text" id="assunto" name="assunto" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="mensagem" class="form-label">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" class="form-textarea" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="submit-button">
+                <span class="button-text">Enviar Mensagem</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo_gray.svg" alt="FR Advocacia Especializada" class="footer-logo">
+          <div class="footer-info">
+            <p class="footer-name">Francisco Roney</p>
+            <p class="footer-title">Advocacia Especializada</p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Serviços</h4>
+            <a href="#servicos">Direito Civil</a>
+            <a href="#servicos">Direito Empresarial</a>
+            <a href="#servicos">Direito de Família</a>
+            <a href="#consulta">Consulta Processual</a>
+          </div>
+
+          <div class="footer-section">
+            <h4>Links Úteis</h4>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+            <a href="public/terms.html">Política de Privacidade</a>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contato</h4>
+            <p>(88) 99945-3173</p>
+            <p>contato@fradvocacia.com.br</p>
+            <p>Juazeiro do Norte, CE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Francisco Roney - Advocacia Especializada. Todos os direitos reservados.</p>
+        <p>Desenvolvido com dedicação aos seus direitos.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Consulta Results/Error -->
+  <div id="consultaModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Fechar modal">&times;</button>
+      <div id="consultaInfo"></div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          mobileMenuToggle.classList.remove('active');
+        });
+      });
+
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Consulta form functionality
+      const consultaForm = document.getElementById('consultaForm');
+      const consultaModal = document.getElementById('consultaModal');
+      const closeModal = document.getElementById('closeModal');
+      const consultaInfo = document.getElementById('consultaInfo');
+
+      consultaForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const processo = document.getElementById('processo').value.trim();
+
+        if (!processo) {
+          showModal('error', 'Por favor, preencha o número do processo.');
+          return;
+        }
+
+        // Show loading state
+        const submitBtn = consultaForm.querySelector('.submit-button');
+        const buttonText = submitBtn.querySelector('.button-text');
+        buttonText.textContent = 'Consultando...';
+        submitBtn.disabled = true;
+
+        // Simulate API call
+        setTimeout(() => {
+          const success = mockConsulta(processo);
+          if (success) {
+            showModal('success', 'Processo encontrado! Redirecionando para resultados...');
+            setTimeout(() => {
+              window.location.href = 'results.html?processo=' + encodeURIComponent(processo);
+            }, 2000);
+          } else {
+            showModal('error', 'Processo não encontrado. Verifique as informações e tente novamente.');
+          }
+          buttonText.textContent = 'Consultar Processo';
+          submitBtn.disabled = false;
+        }, 2000);
+      });
+
+      function showModal(type, message) {
+        consultaInfo.innerHTML = `
+          <div class="modal-${type}">
+            <div class="modal-icon">${type === 'success' ? '✅' : '❌'}</div>
+            <h3>${type === 'success' ? 'Sucesso!' : 'Erro'}</h3>
+            <p>${message}</p>
+          </div>
+        `;
+        consultaModal.style.display = 'flex';
+        setTimeout(() => consultaModal.classList.add('active'), 10);
+      }
+
+      closeModal.addEventListener('click', hideModal);
+      consultaModal.addEventListener('click', function(e) {
+        if (e.target === consultaModal) hideModal();
+      });
+
+      function hideModal() {
+        consultaModal.classList.remove('active');
+        setTimeout(() => consultaModal.style.display = 'none', 300);
+      }
+
+      function mockConsulta(processo) {
+        return processo === '0001234-56.2023.8.06.0001';
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll('.service-card, .testimonial-card, .about-content, .consulta-content').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
   <style>
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #ffffff;
+      --accent-color: #a39185;
+      --accent-hover: #8b7d70;
+      --text-primary: #1a202c;
+      --text-secondary: #718096;
+      --text-muted: #a0aec0;
+      --bg-light: #f7fafc;
+      --bg-dark: #2d3748;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.3s ease;
+      --transition-slow: 0.5s ease;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -16,481 +597,139 @@
     }
 
     body {
-      background: linear-gradient(135deg, #1C1A22 0%, #2A2630 50%, #1C1A22 100%);
-      color: #fff;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--secondary-color);
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
-      min-height: 100vh;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(circle at 20% 80%, rgba(163, 145, 133, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(163, 145, 133, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(163, 145, 133, 0.08) 0%, transparent 50%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(163,145,133,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(163,145,133,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(163,145,133,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      pointer-events: none;
-      z-index: -1;
-      animation: backgroundShift 20s ease-in-out infinite alternate;
-    }
-
-    @keyframes backgroundShift {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-10px) rotate(1deg); }
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Header Styles */
-    .header {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-height: 100px;
-      height: 100px;
-      z-index: 6;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding: 0 1rem;
-      background: linear-gradient(90.1deg, rgba(20, 20, 21, 0) 1.59%, rgba(20, 20, 21, 0.24) 99.92%);
-      filter: drop-shadow(4px 21px 32px #a39185);
-      backdrop-filter: blur(8px);
-    }
-
-    .header-content {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 1224px;
-      height: 100%;
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 0 1rem;
     }
 
-    .logo-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo-container img {
-      height: 100%;
-      width: 100%;
-    }
-
-    .logo-container a:last-child img {
-      opacity: 0;
-      transform: translate(-100%, 0);
-      transition: transform 0.3s, opacity 0.5s;
-    }
-
-    .logo-container:hover a:last-child img {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
-
-    .nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #fff;
-      font-family: 'Lato', sans-serif;
-      font-weight: 400;
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-
-    .nav a:hover {
-      background: #a39185;
-    }
-
-    /* Main Content */
-    .main {
-      margin-top: 100px;
-      min-height: calc(100vh - 200px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .login-container {
-      background: linear-gradient(135deg, rgba(163, 145, 133, 0.15), rgba(28, 28, 28, 0.95));
-      border: 1px solid rgba(163, 145, 133, 0.3);
-      border-radius: 20px;
-      padding: 3rem;
-      max-width: 450px;
-      width: 100%;
-      text-align: center;
-      box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 60px rgba(163, 145, 133, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .login-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(163, 145, 133, 0.1), transparent);
-      animation: shimmer 3s infinite;
-    }
-
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    .login-container h1 {
-      color: #a39185;
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
-      font-size: 3rem;
-      margin-bottom: 2.5rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      position: relative;
-      z-index: 1;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #fff;
-      font-size: 0.9rem;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 1rem;
-      border: 1px solid rgba(163, 145, 133, 0.4);
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05));
-      color: #fff;
-      font-size: 1rem;
-      font-family: 'Lato', sans-serif;
-      transition: all 0.4s ease;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 1;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: #a39185;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
-      box-shadow:
-        inset 0 2px 4px rgba(0, 0, 0, 0.1),
-        0 0 20px rgba(163, 145, 133, 0.2);
-      transform: translateY(-1px);
-    }
-
-    .form-group input::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-      font-style: italic;
-    }
-
-    .login-btn {
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(135deg, #a39185 0%, #8b7a6a 100%);
-      color: #1c1c1c;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      font-family: 'Lato', sans-serif;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      margin-top: 2rem;
-      box-shadow: 0 4px 15px rgba(163, 145, 133, 0.3);
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .login-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .login-btn:hover {
-      background: linear-gradient(135deg, #8b7a6a 0%, #a39185 100%);
-      box-shadow: 0 8px 25px rgba(163, 145, 133, 0.5);
-      transform: translateY(-2px);
-    }
-
-    .login-btn:hover::before {
-      left: 100%;
-    }
-
-    .login-btn:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 10px rgba(163, 145, 133, 0.3);
-    }
-
-    /* Footer Styles */
-    .footer {
-      width: 100%;
-      padding: 0 1.5rem;
-      background: linear-gradient(135deg, rgba(28, 26, 34, 0.95), rgba(42, 38, 48, 0.95));
-      border-top: 1px solid rgba(163, 145, 133, 0.2);
-      backdrop-filter: blur(10px);
-      position: relative;
-    }
-
-    .footer::before {
-      content: '';
-      position: absolute;
+    /* Header */
+    .header {
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(163, 145, 133, 0.5), transparent);
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .footer-content {
+    .nav {
+      padding: 1rem 0;
+    }
+
+    .nav-container {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
       align-items: center;
-      max-width: 1224px;
+      justify-content: space-between;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 0;
-      position: relative;
-      z-index: 1;
+      padding: 0 1rem;
     }
 
-    .footer-info {
+    .logo {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: var(--transition-normal);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-color);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: var(--transition-normal);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
       align-items: center;
       gap: 1rem;
     }
 
-    .footer-info img {
-      width: 60px;
-      height: 54px;
-      filter: brightness(0.8);
-      transition: filter 0.3s ease;
-    }
-
-    .footer-info:hover img {
-      filter: brightness(1);
-    }
-
-    .footer-info div p {
-      font-family: 'Fira Sans', sans-serif;
-      font-weight: 400;
-      font-size: 1.1rem;
-      line-height: 150%;
-      color: rgba(163, 145, 133, 0.8);
-      margin: 0;
-    }
-
-    .footer-info div p:first-child {
-      font-weight: 500;
-      color: #a39185;
-    }
-
-    .social-links {
+    .cta-button {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-
-    .social-links a {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, rgba(163, 145, 133, 0.1), rgba(139, 125, 107, 0.1));
-      border: 1px solid rgba(163, 145, 133, 0.3);
-      border-radius: 12px;
-      padding: 0.75rem;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      transition: var(--transition-normal);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .whatsapp-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
       cursor: pointer;
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem;
     }
 
-    .social-links a:hover {
-      transform: translateY(-3px) scale(1.05);
-      background: linear-gradient(135deg, rgba(163, 145, 133, 0.2), rgba(139, 125, 107, 0.2));
-      border-color: rgba(163, 145, 133, 0.5);
-      box-shadow: 0 8px 25px rgba(163, 145, 133, 0.3);
-    }
-
-    .social-links svg {
+    .mobile-menu-toggle span {
       width: 24px;
-      height: 24px;
-      color: rgba(163, 145, 133, 0.8);
-      transition: all 0.4s ease;
+      height: 2px;
+      background: var(--text-primary);
+      transition: var(--transition-fast);
     }
 
-    .social-links a:hover svg {
-      color: #a39185;
-      transform: scale(1.1);
-    }
-
-    /* Responsive */
-    @media (max-width: 1240px) {
-      .logo-container a:last-child {
-        display: none;
-      }
-    }
-
-    @media (max-width: 950px) {
-      .nav {
-        display: none;
-      }
-    }
-
-    @media (max-width: 820px) {
-      .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem 0 0 0;
-      }
-
-      .footer-info {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-info div {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header {
-        max-height: 72px;
-      }
-
-      .logo-container img {
-        width: 32px;
-      }
-
-      .login-container {
-        padding: 2rem;
-        margin: 0 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="header">
-    <div class="header-content">
-      <div class="logo-container">
-        <a href="../index.html">
-          <img src="assets/logo_small.svg" alt="logomarca Antonio" />
-        </a>
-        <a href="../index.html">
-          <img src="assets/logo_extends.svg" alt="Logomarca Antonio" />
-        </a>
-      </div>
-      <nav class="nav">
-        <a href="http://localhost:5174/">Home</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <div class="login-container">
-      <h1>Login</h1>
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" name="password" placeholder="Sua senha" required>
-        </div>
-        <button type="submit" class="login-btn">Entrar</button>
-      </form>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-info">
-        <img src="assets/logo_gray.svg" alt="logomarca antonio" />
-        <div>
-          <p>Francisco Roney ©</p>
-          <p>Advocacia Especializada</p>
-        </div>
-      </div>
-      <nav class="social-links">
-        <a target="_blank" href="http://linkedin.com/in/francisco-roney-de-sousa-ribeiro-33aa9185/?originalSubdomain=br" rel="noreferrer">
-          <svg viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a target="_blank" href="http://facebook.com/nsfadvogados/" rel="noreferrer">
-          <svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a target="_blank" href="https://www.instagram.com/roneysousa/" rel="noreferrer">
-          <svg viewBox="0 0 24 24" fill="#e4405f"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-      </nav>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-
-      // Simple validation (in a real app, this would be handled server-side)
-      if (email && password) {
-        alert('Login realizado com sucesso! (Esta é uma demonstração)');
-        // Here you would typically redirect to the dashboard or process the login
-      } else {
-        alert('Por favor, preencha todos os campos.');
-      }
-    });
-  </script>
-</body>
-</html>
+    .mobile-menu-toggle

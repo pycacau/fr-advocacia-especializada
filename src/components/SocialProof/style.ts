@@ -1,73 +1,106 @@
 import styled from 'styled-components'
 
 export const SocialProofContainer = styled.section`
-  padding: 4rem 0;
+  padding: 6rem 0;
+  position: relative;
+  overflow: visible;
 
-  h2 {
-    color: #fff;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
+  .section-title {
+    color: ${(props) => props.theme.gray100};
+    font-size: 3rem;
     font-weight: 300;
+    text-align: center;
+    margin-bottom: 4rem;
     position: relative;
-    animation: glow 2s ease-in-out infinite alternate;
+    z-index: 1;
 
-    &:after {
+    background: linear-gradient(
+      135deg,
+      ${(props) => props.theme.gray100},
+      #a39185,
+      ${(props) => props.theme.gray100}
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    &::after {
       content: '';
-      width: 60px;
-      height: 2px;
-      background: #a39185;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #a39185, #8b7d70);
       position: absolute;
-      bottom: -10px;
+      bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
+      border-radius: 2px;
+      animation: expandTitleLine 1.2s ease-out 0.5s forwards;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(163, 145, 133, 0.4), transparent);
+      border-radius: 1px;
+      opacity: 0;
+      animation: fadeInLine 1s ease-out 0.3s forwards;
     }
   }
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 4rem 0;
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .testimonials-grid {
+      gap: 2rem;
+    }
   }
 
   @media (max-width: 768px) {
     padding: 3rem 1rem;
 
-    h2 {
+    .section-title {
       font-size: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .testimonials-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 0 1rem;
     }
   }
 
   @media (max-width: 480px) {
     padding: 2rem 1rem;
 
-    h2 {
+    .section-title {
       font-size: 1.75rem;
       margin-bottom: 2rem;
     }
 
     .testimonials-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-  }
-
-  @keyframes glow {
-    0%,
-    100% {
-      text-shadow: 0 0 10px rgba(163, 145, 133, 0.5);
-    }
-    50% {
-      text-shadow: 0 0 20px rgba(163, 145, 133, 0.8),
-        0 0 30px rgba(163, 145, 133, 0.6);
+      gap: 1.5rem;
     }
   }
 `
@@ -75,55 +108,236 @@ export const SocialProofContainer = styled.section`
 export const TestimonialCard = styled.div`
   background: linear-gradient(
     135deg,
-    rgba(163, 145, 133, 0.1),
-    rgba(28, 28, 28, 0.9)
+    rgba(26, 24, 28, 0.95) 0%,
+    rgba(28, 26, 30, 0.95) 100%
   );
   border: 1px solid rgba(163, 145, 133, 0.2);
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
+  border-radius: 20px;
+  padding: 2.5rem;
   position: relative;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 600px;
-  margin: 0 auto;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(163, 145, 133, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
 
-  .quote-icon {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 0.75rem;
-    opacity: 0.7;
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.5),
+      0 0 100px rgba(163, 145, 133, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    .card-decoration .decoration-line {
+      width: 100%;
+      background: linear-gradient(90deg, #a39185, #8b7d70);
+      box-shadow: 0 0 15px rgba(163, 145, 133, 0.5);
+    }
+
+    .author-avatar {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(163, 145, 133, 0.6);
+    }
+
+    .quote-icon {
+      transform: scale(1.1) rotate(5deg);
+      color: rgba(163, 145, 133, 0.6);
+    }
   }
 
-  p {
-    color: #fff;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    font-style: italic;
-    flex-grow: 1;
-  }
-
-  .author {
+  .card-header {
     display: flex;
-    justify-content: center;
-    margin-top: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
 
-    strong {
-      color: #a39185;
-      font-size: 0.9rem;
-      font-weight: 500;
+    .quote-icon {
+      font-size: 4rem;
+      color: rgba(163, 145, 133, 0.3);
+      font-family: 'Georgia', serif;
+      line-height: 1;
+      margin-top: -10px;
+    }
+  }
+
+  .testimonial-content {
+    margin-bottom: 2rem;
+
+    .testimonial-text {
+      color: ${(props) => props.theme.gray200};
+      font-size: 1.1rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0;
+      position: relative;
+
+      &::before {
+        content: '"';
+        font-size: 2rem;
+        color: rgba(163, 145, 133, 0.2);
+        position: absolute;
+        top: -10px;
+        left: -15px;
+        font-family: 'Georgia', serif;
+      }
+
+      &::after {
+        content: '"';
+        font-size: 2rem;
+        color: rgba(163, 145, 133, 0.2);
+        position: absolute;
+        bottom: -20px;
+        right: -15px;
+        font-family: 'Georgia', serif;
+      }
+    }
+  }
+
+  .author-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(163, 145, 133, 0.2), rgba(139, 125, 107, 0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(163, 145, 133, 0.3);
+      backdrop-filter: blur(5px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(163, 145, 133, 0.4), rgba(139, 125, 107, 0.4));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: -1;
+      }
+
+      .avatar-initials {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #a39185;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(163, 145, 133, 0.6);
+
+        &::before {
+          opacity: 1;
+        }
+
+        .avatar-initials {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .author-info {
+      flex: 1;
+
+      .author-name {
+        display: block;
+        color: ${(props) => props.theme.gray100};
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .author-role {
+        display: block;
+        color: rgba(163, 145, 133, 0.8);
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .card-decoration {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .decoration-line {
+      flex: 1;
+      height: 2px;
+      background: rgba(163, 145, 133, 0.2);
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .decoration-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a39185, #8b7d70);
+      box-shadow: 0 0 10px rgba(163, 145, 133, 0.5);
     }
   }
 
   @media (max-width: 768px) {
-    padding: 1.25rem;
-    height: 250px;
+    padding: 2rem;
 
-    p {
+    .card-header {
+      margin-bottom: 1.25rem;
+
+      .quote-icon {
+        font-size: 3rem;
+      }
+    }
+
+    .testimonial-content .testimonial-text {
+      font-size: 1rem;
+    }
+
+    .author-section {
+      gap: 0.8rem;
+
+      .author-avatar {
+        width: 45px;
+        height: 45px;
+
+        .avatar-initials {
+          font-size: 1rem;
+        }
+      }
+
+      .author-info {
+        .author-name {
+          font-size: 1rem;
+        }
+
+        .author-role {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+
+    .card-header .quote-icon {
+      font-size: 2.5rem;
+    }
+
+    .testimonial-content .testimonial-text {
       font-size: 0.95rem;
     }
   }
@@ -131,25 +345,63 @@ export const TestimonialCard = styled.div`
 
 export const StarRating = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 0.2rem;
-  margin-bottom: 1rem;
+  gap: 0.3rem;
 
   .star {
     color: rgba(163, 145, 133, 0.3);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
 
     &.filled {
       color: #a39185;
     }
   }
 `
+
+// Global animations
+export const globalAnimations = `
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes expandTitleLine {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 120px;
+    }
+  }
+
+  @keyframes fadeInLine {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-in {
+    animation: fadeInUp 0.8s ease-out forwards !important;
+  }
+`
+
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
   z-index: 1;
+
 
   p {
     font-family: 'Fira Sans';

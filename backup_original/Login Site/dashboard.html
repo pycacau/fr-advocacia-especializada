@@ -1,0 +1,402 @@
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - FR Advocacia Especializada</title>
+  <link rel="icon" type="image/png" href="public/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1C1A22 0%, #2A2630 50%, #1C1A22 100%);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(163, 145, 133, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(163, 145, 133, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(163, 145, 133, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-height: 100px;
+      height: 100px;
+      z-index: 6;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 0 1rem;
+      background: linear-gradient(90.1deg, rgba(20, 20, 21, 0) 1.59%, rgba(20, 20, 21, 0.24) 99.92%);
+      filter: drop-shadow(4px 21px 32px #a39185);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1224px;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-container img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .nav a:hover {
+      background: #a39185;
+    }
+
+    .main {
+      margin-top: 100px;
+      min-height: calc(100vh - 200px);
+      padding: 2rem;
+    }
+
+    .dashboard-container {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .welcome-section {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .welcome-section h1 {
+      color: #a39185;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .welcome-section p {
+      color: rgba(163, 145, 133, 0.8);
+      font-size: 1.2rem;
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .processes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .process-card {
+      background: linear-gradient(135deg, rgba(163, 145, 133, 0.1), rgba(28, 28, 28, 0.98));
+      border: 1px solid rgba(163, 145, 133, 0.4);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(163, 145, 133, 0.2);
+      border-color: rgba(163, 145, 133, 0.6);
+    }
+
+    .process-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(163, 145, 133, 0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .process-card:hover::before {
+      left: 100%;
+    }
+
+    .process-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .process-number {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #a39185;
+      font-family: 'Fira Sans', sans-serif;
+    }
+
+    .process-status {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .status-ativo {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+      border: 1px solid #22c55e;
+    }
+
+    .status-pendente {
+      background: rgba(251, 191, 36, 0.2);
+      color: #fbbf24;
+      border: 1px solid #fbbf24;
+    }
+
+    .status-concluido {
+      background: rgba(59, 130, 246, 0.2);
+      color: #3b82f6;
+      border: 1px solid #3b82f6;
+    }
+
+    .process-description {
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .process-updates {
+      border-top: 1px solid rgba(163, 145, 133, 0.2);
+      padding-top: 1.5rem;
+    }
+
+    .update-item {
+      background: rgba(163, 145, 133, 0.05);
+      border: 1px solid rgba(163, 145, 133, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .update-date {
+      color: #a39185;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .update-description {
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .no-updates {
+      color: rgba(163, 145, 133, 0.6);
+      font-style: italic;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .logout-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #a39185 0%, #8b7a6a 100%);
+      color: #1c1c1c;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(163, 145, 133, 0.3);
+    }
+
+    .logout-btn:hover {
+      background: linear-gradient(135deg, #8b7a6a 0%, #a39185 100%);
+      box-shadow: 0 6px 20px rgba(163, 145, 133, 0.5);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        padding: 1rem;
+      }
+
+      .processes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .process-card {
+        padding: 1.5rem;
+      }
+
+      .welcome-section h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/logo_small.svg" alt="logomarca Antonio" />
+        </a>
+        <a href="index.html">
+          <img src="assets/logo_extends.svg" alt="Logomarca Antonio" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="http://localhost:5174/">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="dashboard-container">
+      <div class="welcome-section">
+        <h1>Seus Processos</h1>
+        <p>Acompanhe o andamento dos seus casos jurídicos</p>
+      </div>
+
+      <div id="processesContainer" class="processes-grid">
+        <!-- Process cards will be loaded here -->
+      </div>
+    </div>
+  </main>
+
+  <button class="logout-btn" onclick="logout()">Sair</button>
+
+  <script>
+    // Check if user is logged in
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+
+    if (!token || !user) {
+      window.location.href = 'index.html';
+    }
+
+    // Load user processes
+    async function loadProcesses() {
+      try {
+        const response = await fetch('http://localhost:3001/api/processes', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (response.ok) {
+          const processes = await response.json();
+          displayProcesses(processes);
+        } else {
+          console.error('Failed to load processes');
+          document.getElementById('processesContainer').innerHTML = '<p>Erro ao carregar processos.</p>';
+        }
+      } catch (error) {
+        console.error('Error loading processes:', error);
+        document.getElementById('processesContainer').innerHTML = '<p>Erro ao conectar com o servidor.</p>';
+      }
+    }
+
+    function displayProcesses(processes) {
+      const container = document.getElementById('processesContainer');
+
+      if (processes.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: rgba(163, 145, 133, 0.8);">Nenhum processo encontrado.</p>';
+        return;
+      }
+
+      container.innerHTML = processes.map(process => `
+        <div class="process-card">
+          <div class="process-header">
+            <div class="process-number">${process.number}</div>
+            <div class="process-status status-${process.status.toLowerCase()}">${process.status}</div>
+          </div>
+          <div class="process-description">${process.description}</div>
+          <div class="process-updates">
+            ${process.latestUpdate ?
+              `<div class="update-item">
+                <div class="update-date">${new Date(process.latestUpdate.date).toLocaleDateString('pt-BR')}</div>
+                <div class="update-description">${process.latestUpdate.description}</div>
+              </div>` :
+              '<div class="no-updates">Nenhuma atualização recente</div>'
+            }
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    }
+
+    // Load processes on page load
+    loadProcesses();
+  </script>
+</body>
+</html>

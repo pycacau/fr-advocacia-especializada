@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo - FR Advocacia Especializada</title>
+  <link rel="icon" type="image/png" href="public/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1C1A22 0%, #2A2630 50%, #1C1A22 100%);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(163, 145, 133, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(163, 145, 133, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(163, 145, 133, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-height: 100px;
+      height: 100px;
+      z-index: 6;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 0 1rem;
+      background: linear-gradient(90.1deg, rgba(20, 20, 21, 0) 1.59%, rgba(20, 20, 21, 0.24) 99.92%);
+      filter: drop-shadow(4px 21px 32px #a39185);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1224px;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-container img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .nav a:hover {
+      background: #a39185;
+    }
+
+    .main {
+      margin-top: 100px;
+      min-height: calc(100vh - 200px);
+      padding: 2rem;
+    }
+
+    .admin-container {
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .admin-header h1 {
+      color: #a39185;
+      font-size: 2.5rem;
+    }
+
+    .logout-btn {
+      background: linear-gradient(135deg, #a39185 0%, #8b7a6a 100%);
+      color: #1c1c1c;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(163, 145, 133, 0.3);
+    }
+
+    .logout-btn:hover {
+      background: linear-gradient(135deg, #8b7a6a 0%, #a39185 100%);
+      box-shadow: 0 6px 20px rgba(163, 145, 133, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(163, 145, 133, 0.2);
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: rgba(163, 145, 133, 0.8);
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab-btn.active {
+      color: #a39185;
+      border-bottom-color: #a39185;
+    }
+
+    .tab-btn:hover {
+      color: #a39185;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .section {
+      background: linear-gradient(135deg, rgba(163, 145, 133, 0.1), rgba(28, 28, 28, 0.98));
+      border: 1px solid rgba(163, 145, 133, 0.4);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .section h2 {
+      color: #a39185;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid rgba(163, 145, 133, 0.4);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #a39185;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 2px rgba(163, 145, 133, 0.2);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #a39185 0%, #8b7a6a 100%);
+      color: #1c1c1c;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(163, 145, 133, 0.3);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #8b7a6a 0%, #a39185 100%);
+      box-shadow: 0 6px 20px rgba(163, 145, 133, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    }
+
+    .btn-danger:hover {
+      background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(163, 145, 133, 0.2);
+    }
+
+    .data-table th {
+      color: #a39185;
+      font-weight: 600;
+    }
+
+    .data-table tr:hover {
+      background: rgba(163, 145, 133, 0.05);
+    }
+
+    .status-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .status-ativo {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+
+    .status-pendente {
+      background: rgba(251, 191, 36, 0.2);
+      color: #fbbf24;
+    }
+
+    .status-concluido {
+      background: rgba(59, 130, 246, 0.2);
+      color: #3b82f6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, rgba(163, 145, 133, 0.1), rgba(28, 28, 28, 0.98));
+      border: 1px solid rgba(163, 145, 133, 0.4);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-header h3 {
+      color: #a39185;
+      font-size: 1.5rem;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: rgba(163, 145, 133, 0.8);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: #a39185;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        padding: 1rem;
+      }
+
+      .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .tabs {
+        flex-wrap: wrap;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .data-table {
+        font-size: 0.9rem;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/logo_small.svg" alt="logomarca Antonio" />
+        </a>
+        <a href="index.html">
+          <img src="assets/logo_extends.svg" alt="Logomarca Antonio" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="http://localhost:5174/">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="admin-container">
+      <div class="admin-header">
+        <h1>Painel Administrativo</h1>
+        <button class="logout-btn" onclick="logout()">Sair</button>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('clients')">Clientes</button>
+        <button class="tab-btn" onclick="showTab('processes')">Processos</button>
+        <button class="tab-btn" onclick="showTab('updates')">Atualizações</button>
+      </div>
+
+      <!-- Clients Tab -->
+      <div id="clients" class="tab-content active">
+        <div class="section">
+          <h2>Cadastrar Novo Cliente</h2>
+          <form id="clientForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="clientName">Nome Completo</label>
+                <input type="text" id="clientName" required>
+              </div>
+              <div class="form-group">
+                <label for="clientCpf">CPF</label>
+                <input type="text" id="clientCpf" placeholder="000.000.000-00" required>
+              </div>
+            </div>
+            <button type="submit" class="btn">Cadastrar Cliente</button>
+          </form>
+        </div>
+
+        <div class="section">
+          <h2>Clientes Cadastrados</h2>
+          <table class="data-table" id="clientsTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Data de Cadastro</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Clients will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Processes Tab -->
+      <div id="processes" class="tab-content">
+        <div class="section">
+          <h2>Criar Novo Processo</h2>
+          <form id="processForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="processNumber">Número do Processo</label>
+                <input type="text" id="processNumber" placeholder="1234567-89.2023.8.26.0100" required>
+              </div>
+              <div class="form-group">
+                <label for="processClient">Cliente (CPF)</label>
+                <select id="processClient" required>
+                  <option value="">Selecione um cliente</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="processStatus">Status</label>
+                <select id="processStatus" required>
+                  <option value="pendente">Pendente</option>
+                  <option value="ativo">Ativo</option>
+                  <option value="concluido">Concluído</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="processDescription">Descrição</label>
+              <textarea id="processDescription" required></textarea>
+            </div>
+            <button type="submit" class="btn">Criar Processo</button>
+          </form>
+        </div>
+
+        <div class="section">
+          <h2>Processos Cadastrados</h2>
+          <table class="data-table" id="processesTable">
+            <thead>
+              <tr>
+                <th>Número</th>
+                <th>Cliente</th>
+                <th>Status</th>
+                <th>Data de Criação</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Processes will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Updates Tab -->
+      <div id="updates" class="tab-content">
+        <div class="section">
+          <h2>Adicionar Atualização</h2>
+          <form id="updateForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="updateProcess">Processo</label>
+                <select id="updateProcess" required>
+                  <option value="">Selecione um processo</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="updateDescription">Descrição da Atualização</label>
+              <textarea id="updateDescription" required></textarea>
+            </div>
+            <button type="submit" class="btn">Adicionar Atualização</button>
+          </form>
+        </div>
+
+        <div class="section">
+          <h2>Histórico de Atualizações</h2>
+          <div id="updatesList">
+            <!-- Updates will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal for editing -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Editar Processo</h3>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <form id="editProcessForm">
+        <div class="form-group">
+          <label for="editStatus">Status</label>
+          <select id="editStatus" required>
+            <option value="pendente">Pendente</option>
+            <option value="ativo">Ativo</option>
+            <option value="concluido">Concluído</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Check if admin is logged in
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+
+    if (!token || !user || user.role !== 'admin') {
+      window.location.href = 'index.html';
+    }
+
+    let currentEditProcessId = null;
+
+    // Tab switching
+    function showTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+
+      if (tabName === 'clients') loadClients();
+      if (tabName === 'processes') loadProcesses();
+      if (tabName === 'updates') loadUpdates();
+    }
+
+    // Load clients
+    async function loadClients() {
+      try {
+        const response = await fetch('http://localhost:3001/api/admin/clients', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+          const clients = await response.json();
+          displayClients(clients);
+        }
+      } catch (error) {
+        console.error('Error loading clients:', error);
+      }
+    }
+
+    function displayClients(clients) {
+      const tbody = document.querySelector('#clientsTable tbody');
+      tbody.innerHTML = clients.map(client => `
+        <tr>
+          <td>${client.name}</td>
+          <td>${client.cpf}</td>
+          <td>${new Date(client.createdAt).toLocaleDateString('pt-BR')}</td>
+          <td class="actions">
+            <button class="btn btn-danger btn-small" onclick="deleteClient('${client.id}')">Excluir</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // Load processes
+    async function loadProcesses() {
+      try {
+        const response = await fetch('http://localhost:3001/api/admin/processes', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+          const processes = await response.json();
+          displayProcesses(processes);
+          populateProcessSelects(processes);
+        }
+      } catch (error) {
+        console.error('Error loading processes:', error);
+      }
+    }
+
+    function displayProcesses(processes) {
+      const tbody = document.querySelector('#processesTable tbody');
+      tbody.innerHTML = processes.map(process => `
+        <tr>
+          <td>${process.number}</td>
+          <td>${process.clientName}</td>
+          <td><span class="status-badge status-${process.status}">${process.status}</span></td>
+          <td>${new Date(process.createdAt).toLocaleDateString('pt-BR')}</td>
+          <td class="actions">
+            <button class="btn btn-small" onclick="editProcess('${process.id}', '${process.status}')">Editar</button>
+            <button class="btn btn-danger btn-small" onclick="deleteProcess('${process.id}')">Excluir</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function populateProcessSelects(processes) {
+      const selects = document.querySelectorAll('#processClient, #updateProcess');
+      selects.forEach(select => {
+        select.innerHTML = '<option value="">Selecione</option>' +
+          processes.map(process => `<option value="${process.id}">${process.number} - ${process.clientName}</option>`).join('');
+      });
+    }
+
+    // Load updates
+    async function loadUpdates() {
+      try {
+        const response = await fetch('http://localhost:3001/api/admin/processes', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+          const processes = await response.json();
+          displayUpdates(processes);
+          populateProcessSelects(processes);
+        }
+      } catch (error) {
+        console.error('Error loading updates:', error);
+      }
+    }
+
+    function displayUpdates(processes) {
+      const container = document.getElementById('updatesList');
+      container.innerHTML = processes.map(process => `
+        <div class="section">
+          <h3>Processo: ${process.number} - ${process.clientName}</h3>
+          ${process.latestUpdate ?
+            `<div style="background: rgba(163, 145, 133, 0.05); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+              <div style="color: #a39185; margin-bottom: 0.5rem;">${new Date(process.latestUpdate.date).toLocaleDateString('pt-BR')}</div>
+              <div style="color: #fff;">${process.latestUpdate.description}</div>
+            </div>` :
+            '<p style="color: rgba(163, 145, 133, 0.6); font-style: italic;">Nenhuma atualização</p>'
+          }
+        </div>
+      `).join('');
+    }
+
+    // Form submissions
+    document.getElementById('clientForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const cpf = document.getElementById('clientCpf').value.replace(/\D/g, '');
+
+      try {
+        const response = await fetch('http://localhost:3001/api/admin/clients', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ name, cpf })
+        });
+
+        if (response.ok) {
+          alert('Cliente cadastrado com sucesso!');
+          document.getElementById('clientForm').reset();
+          loadClients();
+        } else {
+          const error = await response.json();
+          alert('Erro: ' + error.message);
+        }
+      } catch (error) {
+        alert('Erro ao cadastrar cliente');
+        console.error(error);
+      }
+    });
+
+    document.getElementById('processForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const number = document.getElementById('processNumber').value;
+      const clientCpf = document.getElementById('processClient').value;
+      const status = document.getElementById('processStatus').value;
+      const description = document.getElementById('processDescription').value;
+
+      try {
+        const response = await fetch('http://localhost:3001/api/admin/processes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ number, clientCpf, status, description })
+        });
+
+        if (response.ok) {
+          alert('Processo criado com sucesso!');
+          document.getElementById('processForm').reset();
+          loadProcesses();
+        } else {
+          const error = await response.json();
+          alert('Erro: ' + error.message);
+        }
+      } catch (error) {
+        alert('Erro ao criar processo');
+        console.error(error);
+      }
+    });
+
+    document.getElementById('updateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const processId = document.getElementById('updateProcess').value;
+      const description = document.getElementById('updateDescription').value;
+
+      try {
+        const response = await fetch(`http://localhost:3001/api/admin/processes/${processId}/updates`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ description })
+        });
+
+        if (response.ok) {
+          alert('Atualização adicionada com sucesso!');
+          document.getElementById('updateForm').reset();
+          loadUpdates();
+        } else {
+          const error = await response.json();
+          alert('Erro: ' + error.message);
+        }
+      } catch (error) {
+        alert('Erro ao adicionar atualização');
+        console.error(error);
+      }
+    });
+
+    // Edit process
+    function editProcess(id, currentStatus) {
+      currentEditProcessId = id;
+      document.getElementById('editStatus').value = currentStatus;
+      document.getElementById('editModal').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('editModal').classList.remove('show');
+      currentEditProcessId = null;
+    }
+
+    document.getElementById('editProcessForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('editStatus').value;
+
+      try {
+        const response = await fetch(`http://localhost:3001/api/admin/processes/${currentEditProcessId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ status })
+        });
+
+        if (response.ok) {
+          alert('Processo atualizado com sucesso!');
+          closeModal();
+          loadProcesses();
+        } else {
+          const error = await response.json();
+          alert('Erro: ' + error.message);
+        }
+      } catch (error) {
+        alert('Erro ao atualizar processo');
+        console.error(error);
+      }
+    });
+
+    // Delete functions
+    async function deleteClient(id) {
+      if (!confirm('Tem certeza que deseja excluir este cliente?')) return;
+
+      try {
+        const response = await fetch(`http://localhost:3001/api/admin/clients/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+          alert('Cliente excluído com sucesso!');
+          loadClients();
+        } else {
+          alert('Erro ao excluir cliente');
+        }
+      } catch (error) {
+        alert('Erro ao excluir cliente');
+        console.error(error);
+      }
+    }
+
+    async function deleteProcess(id) {
+      if (!confirm('Tem certeza que deseja excluir este processo?')) return;
+
+      try {
+        const response = await fetch(`http://localhost:3001/api/admin/processes/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+          alert('Processo excluído com sucesso!');
+          loadProcesses();
+        } else {
+          alert('Erro ao excluir processo');
+        }
+      } catch (error) {
+        alert('Erro ao excluir processo');
+        console.error(error);
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    }
+
+    // Load initial data
+    loadClients();
+  </script>
+</body>
+</html>

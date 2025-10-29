@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "username": "admin",
+      "password": "$2b$10$X8bOrujCfjCl7.qTy591KeJJlmNiyhDTfGjKUfF2U8zIcz8FPy/gO",
+      "role": "admin",
+      "createdAt": "2025-10-25T03:10:10.868Z"
+    },
+    {
+      "id": "1761362288805",
+      "name": "Jo�o Silva",
+      "cpf": "12345678901",
+      "role": "client",
+      "createdAt": "2025-10-25T03:18:08.805Z"
+    }
+  ],
+  "processes": [
+    {
+      "id": "1761365747477",
+      "number": "1234567-89.2023.8.26.0100",
+      "description": "Processo de div�rcio consensual",
+      "status": "ativo",
+      "clientCpf": "12345678901",
+      "createdAt": "2025-10-25T04:15:47.477Z"
+    }
+  ],
+  "updates": [
+    {
+      "id": "1761365773216",
+      "processId": "1761365747477",
+      "description": "Audi�ncia inicial agendada para 15/11/2023",
+      "date": "2025-10-25T04:16:13.216Z"
+    }
+  ]
+}

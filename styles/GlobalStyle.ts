@@ -8,7 +8,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: #1C1A22;
+        background:
+            linear-gradient(135deg, #1C1A22 0%, #25272A 50%, #1C1A22 100%),
+            radial-gradient(circle at 20% 80%, rgba(163, 145, 133, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(139, 125, 107, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(163, 145, 133, 0.05) 0%, transparent 50%);
+        background-attachment: fixed;
         color: #fff;
 
         overflow-x: hidden;

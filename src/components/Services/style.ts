@@ -10,8 +10,25 @@ export const ServicesContainer = styled.section`
   padding: 100px 1.5rem 0 1.5rem;
 
   position: relative;
+  overflow: visible;
 
-  margin-bottom: 12rem;
+  margin-bottom: 0;
+
+  /* Fundo com gradiente sutil */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(163, 145, 133, 0.02) 0%,
+      transparent 70%
+    );
+    z-index: 0;
+  }
 
   .branchBg {
     position: absolute;
@@ -20,6 +37,12 @@ export const ServicesContainer = styled.section`
 
     transform: scaleX(-1);
     rotate: -10deg;
+    opacity: 0.4;
+    filter: blur(1px) drop-shadow(0 0 20px rgba(163, 145, 133, 0.2));
+    z-index: 0;
+
+    /* Animação sutil de flutuação */
+    animation: branchFloat 6s ease-in-out infinite;
   }
 
   .headerContainer {
@@ -31,41 +54,94 @@ export const ServicesContainer = styled.section`
 
     max-width: 1224px;
     width: 100%;
+    position: relative;
+    z-index: 1;
 
-    h2 {
+    .services-title {
       color: ${(props) => props.theme.gray100};
-      font-family: 'Lato';
+      font-family: 'Lato', sans-serif;
       font-weight: 400;
       font-size: 2.5rem;
       line-height: 125%;
       text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+
+      background: linear-gradient(
+        135deg,
+        ${(props) => props.theme.gray100},
+        #a39185,
+        ${(props) => props.theme.gray100}
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(163, 145, 133, 0.5);
+
+      position: relative;
+
+      /* Brilho pulsante */
+      animation:
+        fadeInUp 0.8s ease-out 0.2s forwards,
+        textGlow 3s ease-in-out infinite 1s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #a39185, #8b7d70, #a39185);
+        border-radius: 2px;
+        animation: expandLine 1s ease-out 0.8s forwards;
+        box-shadow: 0 0 10px rgba(163, 145, 133, 0.6);
+      }
 
       @media (max-width: 580px) {
         font-size: 1.5rem;
       }
     }
 
-    p {
-      font-family: 'Lato';
+    .services-subtitle {
+      font-family: 'Lato', sans-serif;
       font-weight: 400;
       font-size: 1.25rem;
       line-height: 29px;
       color: ${(props) => props.theme.gray200};
       opacity: 0.8;
       text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out 0.4s forwards;
 
       max-width: 635px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(163, 145, 133, 0.5), transparent);
+        border-radius: 1px;
+      }
     }
   }
 
   @media (max-width: 768px) {
     padding: 80px 1.5rem 0 1.5rem;
-    margin-bottom: 8rem;
+    margin-bottom: 0;
   }
 
   @media (max-width: 580px) {
     padding: 60px 1rem 0 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 `
 
@@ -75,12 +151,17 @@ export const CardContainer = styled.div`
   gap: 1.5rem;
 
   max-width: 1224px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
 
   @media (max-width: 1150px) {
-    gap: 0;
+    gap: 1rem;
   }
   @media (max-width: 1120px) {
-    gap: 0;
+    gap: 1rem;
   }
   @media (max-width: 992px) {
     grid-template-columns: 1fr 1fr;
@@ -94,22 +175,20 @@ export const CardContainer = styled.div`
 `
 
 export const ServiceCard = styled.div`
-  width: 20.18rem;
-  height: 15.12rem;
+  width: 24rem;
+  min-height: 18rem;
   z-index: 1;
 
   background: linear-gradient(
-        ${(props) => props.theme.gray700},
-        ${(props) => props.theme.gray700}
+        rgba(26, 24, 28, 0.95),
+        rgba(26, 24, 28, 0.95)
       )
       padding-box,
-    ${(props) => props.theme.gradientBorder} border-box;
-  border-radius: 8px;
+    linear-gradient(135deg, rgba(163, 145, 133, 0.3), rgba(139, 125, 107, 0.3)) border-box;
+  border-radius: 16px;
   border: 1px solid transparent;
 
   padding: 1.5rem;
-  border-radius: 8px;
-
   overflow: hidden;
   cursor: pointer;
 
@@ -120,78 +199,206 @@ export const ServiceCard = styled.div`
   align-items: center;
   gap: 1rem;
 
+  backdrop-filter: blur(15px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 0 60px rgba(163, 145, 133, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+
+  /* Brilho sutil no hover */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(163, 145, 133, 0.15),
+      rgba(139, 125, 107, 0.15),
+      transparent
+    );
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+
+  /* Efeito de brilho interno */
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(163, 145, 133, 0.1) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
   @media (max-width: 1120px) {
-    transform: scale(0.9);
+    transform: scale(0.85);
   }
   @media (max-width: 1150px) {
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
 
   &:hover,
   &:active {
+    transform: translateY(-12px) scale(1.03) rotateX(2deg);
+    box-shadow:
+      0 25px 60px rgba(163, 145, 133, 0.3),
+      0 0 120px rgba(163, 145, 133, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    background: linear-gradient(
+          135deg,
+          rgba(163, 145, 133, 0.2),
+          rgba(139, 125, 107, 0.2)
+        )
+        padding-box,
+      linear-gradient(135deg, rgba(163, 145, 133, 0.6), rgba(139, 125, 107, 0.6)) border-box;
+
     .description {
-      animation: toRight 0.5s;
-      transform: translate(0, 0);
+      opacity: 1;
+      transform: translateX(0);
+      color: ${(props) => props.theme.gray200};
     }
 
-    .casesCount {
-      opacity: 0;
+    .cases-badge {
+      opacity: 1;
+      transform: scale(1.08);
     }
 
     .header {
-      animation: toBottom 0.5s;
-      transform: translate(0, 0);
+      transform: translateY(0);
     }
 
-    .arrow {
-      animation: toTop 0.5s;
-      transform: translate(0, 0);
+    .arrow-container {
+      transform: translate(0, 0) scale(1.2) rotate(10deg);
     }
 
-    box-shadow: 0 0 40px rgba(163, 145, 133, 0.8),
-      0 0 80px rgba(163, 145, 133, 0.4);
-    transform: scale(1.08) rotate(1deg);
-    transition: all 0.5s ease;
-    background: linear-gradient(
-          135deg,
-          rgba(163, 145, 133, 0.1),
-          rgba(139, 125, 107, 0.1)
-        )
-        padding-box,
-      ${(props) => props.theme.gradientBorder} border-box;
+    .icon-wrapper {
+      transform: scale(1.15) rotate(8deg);
+      background: linear-gradient(135deg, rgba(163, 145, 133, 0.4), rgba(139, 125, 107, 0.4));
+      box-shadow: 0 0 30px rgba(163, 145, 133, 0.6);
+    }
+
+    h3 {
+      color: #a39185;
+      text-shadow: 0 0 10px rgba(163, 145, 133, 0.5);
+    }
+  }
+
+  .service-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    animation: fadeInUpScale 0.8s ease-out forwards;
   }
 
   h3 {
-    font-family: 'Lato';
-    font-style: normal;
+    font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 1rem;
     line-height: 150%;
+    color: ${(props) => props.theme.gray100};
+    margin: 0;
+    transition: color 0.3s ease;
   }
 
   .description {
-    font-family: 'Fira Sans';
-    font-style: normal;
+    font-family: 'Fira Sans', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 150%;
-
+    font-size: 0.9rem;
+    line-height: 140%;
     color: ${(props) => props.theme.gray300};
-
-    transform: translate(-120%, 0);
-    transition: transform 0.5s;
+    margin: 0;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .casesCount {
-    font-family: 'Fira Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.75rem;
-    line-height: 150%;
+    .cases-badge {
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1);
 
-    color: ${(props) => props.theme.gray500};
-    transition: opacity 0.3s;
-  }
+      .cases-number {
+        font-family: 'Fira Sans', sans-serif;
+        font-weight: 500;
+        font-size: 0.8rem;
+        line-height: 150%;
+        color: ${(props) => props.theme.gray500};
+        background: linear-gradient(135deg, #a39185, #8b7d70);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        z-index: 1;
+      }
+
+      .badge-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 25px;
+        background: radial-gradient(
+          ellipse,
+          rgba(163, 145, 133, 0.3) 0%,
+          rgba(163, 145, 133, 0.1) 50%,
+          transparent 80%
+        );
+        opacity: 0;
+        transition: all 0.4s ease;
+        border-radius: 12px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, rgba(163, 145, 133, 0.2), rgba(139, 125, 107, 0.2));
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 0;
+      }
+
+      &:hover .badge-glow {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
 
   .contentContainer {
     display: flex;
@@ -199,62 +406,153 @@ export const ServiceCard = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     flex: 1;
+    width: 100%;
   }
 
-  .arrow {
+  .arrow-container {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
+    transform: translate(0, 0) scale(1);
+    transition: all 0.3s ease;
 
-    transform: translate(-50%, 50%);
-    transition: transform 0.5s;
+    .arrow {
+      width: 20px;
+      height: 20px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .arrow {
+      transform: rotate(45deg) scale(1.1);
+    }
   }
 
   .header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    width: 100%;
+    transform: translateY(0);
+    transition: all 0.3s ease;
 
-    margin-right: 3.31rem;
-    transform: translate(0, 200%);
-    transition: transform 0.5s;
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(163, 145, 133, 0.1), rgba(139, 125, 107, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(163, 145, 133, 0.2);
+      transition: all 0.3s ease;
+
+      img {
+        width: 32px;
+        height: 32px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        background: linear-gradient(135deg, rgba(163, 145, 133, 0.2), rgba(139, 125, 107, 0.2));
+        transform: scale(1.05);
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 
-  @keyframes toRight {
+  @keyframes slideInRight {
     0% {
-      transform: translate(-120%, 0);
-    }
-    50% {
-      transform: translate(10%, 0);
+      transform: translateX(-120%);
+      opacity: 0;
     }
     100% {
-      transform: translate(0, 0);
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 
-  @keyframes toBottom {
+  @keyframes slideInUp {
     0% {
-      transform: translate(0, 200%);
-    }
-    50% {
-      transform: translate(0, -20%);
+      transform: translateY(200%);
     }
     100% {
-      transform: translate(0, 0);
+      transform: translateY(0);
     }
   }
 
-  @keyframes toTop {
+  @keyframes bounceIn {
     0% {
-      transform: translate(-50%, 50%);
+      transform: translate(-50%, 50%) scale(0.8);
+      opacity: 0;
     }
     50% {
-      transform: translate(20%, -20%);
+      transform: translate(-50%, 50%) scale(1.1);
+      opacity: 1;
     }
     100% {
-      transform: translate(0, 0);
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
     }
+  }
+
+  @keyframes fadeInUpScale {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes expandLine {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100px;
+    }
+  }
+
+  @keyframes branchFloat {
+    0%, 100% {
+      transform: scaleX(-1) rotate(-10deg) translateY(0px);
+    }
+    50% {
+      transform: scaleX(-1) rotate(-10deg) translateY(-10px);
+    }
+  }
+
+  @keyframes textGlow {
+    0%, 100% {
+      text-shadow: 0 0 30px rgba(163, 145, 133, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 40px rgba(163, 145, 133, 0.8), 0 0 60px rgba(163, 145, 133, 0.4);
+    }
+  }
+
+  .animate-in {
+    animation: fadeInUp 0.8s ease-out forwards !important;
   }
 `

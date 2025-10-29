@@ -9,6 +9,7 @@ export const FloatingContainer = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   z-index: 1000;
+  pointer-events: auto;
 
   a {
     display: block;
@@ -25,7 +26,6 @@ export const FloatingContainer = styled.div`
     backdrop-filter: blur(10px);
 
     &:hover {
-      transform: scale(1.15) translateY(-2px);
       background: linear-gradient(
         135deg,
         rgba(163, 145, 133, 0.25),
@@ -45,7 +45,6 @@ export const FloatingContainer = styled.div`
 
     &:hover img {
       filter: brightness(1) contrast(1.3) saturate(1.1);
-      transform: rotate(5deg);
     }
   }
 
