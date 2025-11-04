@@ -30,16 +30,16 @@ export const HomeContainer = styled.section`
       display: block;
       background: linear-gradient(
         135deg,
-        rgba(163, 145, 133, 0.2),
-        rgba(139, 125, 107, 0.2)
+        rgba(145, 145, 145, 0.2),
+        rgba(107, 107, 107, 0.2)
       );
-      border: 1px solid rgba(163, 145, 133, 0.3);
+      border: 1px solid rgba(145, 145, 145, 0.3);
       border-radius: 50%;
       padding: 0.5rem;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow:
         0 2px 8px rgba(0, 0, 0, 0.1),
-        0 0 15px rgba(163, 145, 133, 0.1),
+        0 0 15px rgba(145, 145, 145, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(8px);
       position: relative;
@@ -65,15 +65,15 @@ export const HomeContainer = styled.section`
       }
 
       &:hover {
-        background: linear-gradient(
-          135deg,
-          rgba(163, 145, 133, 0.35),
-          rgba(139, 125, 107, 0.35)
-        );
-        border-color: rgba(163, 145, 133, 0.6);
-        box-shadow:
-          0 4px 15px rgba(163, 145, 133, 0.2),
-          0 0 25px rgba(163, 145, 133, 0.15),
+      background: linear-gradient(
+        135deg,
+        rgba(145, 145, 145, 0.35),
+        rgba(107, 107, 107, 0.35)
+      );
+      border-color: rgba(145, 145, 145, 0.6);
+      box-shadow:
+        0 4px 15px rgba(145, 145, 145, 0.2),
+        0 0 25px rgba(145, 145, 145, 0.15),
           inset 0 1px 0 rgba(255, 255, 255, 0.1);
         transform: translateY(-2px) scale(1.02);
 
@@ -126,8 +126,8 @@ export const HomeContainer = styled.section`
     right: 0;
     bottom: 0;
     background:
-      radial-gradient(circle at 20% 80%, rgba(163, 145, 133, 0.02) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(163, 145, 133, 0.01) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, rgba(145, 145, 145, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(145, 145, 145, 0.01) 0%, transparent 50%);
     animation: backgroundPulse 20s ease-in-out infinite;
     z-index: 0;
   }
@@ -138,7 +138,7 @@ export const HomeContainer = styled.section`
     top: 0.15%;
     z-index: 0;
     transform: scaleX(-1);
-    filter: drop-shadow(0 0 20px rgba(163, 145, 133, 0.3));
+    filter: drop-shadow(0 0 20px rgba(145, 145, 145, 0.3));
     animation: branchFloat 6s ease-in-out infinite;
   }
 
@@ -146,47 +146,12 @@ export const HomeContainer = styled.section`
     height: 100%;
     width: 100%;
     max-width: 350px;
-    border-radius: 15px;
+    border-radius: 30px;
     box-shadow:
       0 0 30px rgba(163, 145, 133, 0.3),
       0 0 60px rgba(163, 145, 133, 0.1),
       inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-
-    /* Brilho animado sutil */
-    &::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg,
-        transparent,
-        rgba(163, 145, 133, 0.08),
-        transparent,
-        rgba(163, 145, 133, 0.08),
-        transparent
-      );
-      border-radius: 17px;
-      z-index: -1;
-      animation: shine 8s linear infinite;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    &:hover {
-      transform: scale(1.02) rotate(1deg);
-      box-shadow:
-        0 0 40px rgba(163, 145, 133, 0.4),
-        0 0 80px rgba(163, 145, 133, 0.2),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-
-      &::before {
-        opacity: 1;
-      }
-    }
   }
 
   .paralaxContainer {
@@ -224,7 +189,7 @@ export const HomeContainer = styled.section`
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 
-    border-radius: 12px;
+    border-radius: 18px;
     cursor: pointer;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
@@ -242,7 +207,7 @@ export const HomeContainer = styled.section`
         transparent 50%,
         rgba(255, 255, 255, 0.01) 100%
       );
-      border-radius: 12px;
+      border-radius: 18px;
       opacity: 0;
       transition: opacity 0.5s ease;
     }
@@ -476,7 +441,7 @@ export const HomeContent = styled.div`
       background-size: 200% 200%;
       animation: underlineFlow 2s ease-in-out infinite;
       transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     &:hover::after {

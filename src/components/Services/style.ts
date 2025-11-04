@@ -185,7 +185,7 @@ export const ServiceCard = styled.div`
       )
       padding-box,
     linear-gradient(135deg, rgba(163, 145, 133, 0.3), rgba(139, 125, 107, 0.3)) border-box;
-  border-radius: 16px;
+  border-radius: 48px;
   border: 1px solid transparent;
 
   padding: 1.5rem;
@@ -208,51 +208,7 @@ export const ServiceCard = styled.div`
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 
-  /* Brilho sutil no hover */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(163, 145, 133, 0.15),
-      rgba(139, 125, 107, 0.15),
-      transparent
-    );
-    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1;
-  }
-
-  /* Efeito de brilho interno */
-  &::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-      circle,
-      rgba(163, 145, 133, 0.1) 0%,
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  &:hover::before {
-    left: 100%;
-  }
-
-  &:hover::after {
-    opacity: 1;
-  }
+  /* Brilho sutil no hover removido */
 
   @media (max-width: 1120px) {
     transform: scale(0.85);
@@ -265,22 +221,12 @@ export const ServiceCard = styled.div`
   &:active {
     transform: translateY(-12px) scale(1.03) rotateX(2deg);
     box-shadow:
-      0 25px 60px rgba(163, 145, 133, 0.3),
-      0 0 120px rgba(163, 145, 133, 0.25),
+      0 25px 60px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
-    background: linear-gradient(
-          135deg,
-          rgba(163, 145, 133, 0.2),
-          rgba(139, 125, 107, 0.2)
-        )
-        padding-box,
-      linear-gradient(135deg, rgba(163, 145, 133, 0.6), rgba(139, 125, 107, 0.6)) border-box;
 
     .description {
       opacity: 1;
       transform: translateX(0);
-      color: ${(props) => props.theme.gray200};
     }
 
     .cases-badge {
@@ -298,13 +244,6 @@ export const ServiceCard = styled.div`
 
     .icon-wrapper {
       transform: scale(1.15) rotate(8deg);
-      background: linear-gradient(135deg, rgba(163, 145, 133, 0.4), rgba(139, 125, 107, 0.4));
-      box-shadow: 0 0 30px rgba(163, 145, 133, 0.6);
-    }
-
-    h3 {
-      color: #a39185;
-      text-shadow: 0 0 10px rgba(163, 145, 133, 0.5);
     }
   }
 
@@ -384,7 +323,7 @@ export const ServiceCard = styled.div`
         right: -2px;
         bottom: -2px;
         background: linear-gradient(135deg, rgba(163, 145, 133, 0.2), rgba(139, 125, 107, 0.2));
-        border-radius: 8px;
+        border-radius: 16px;
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: 0;
@@ -441,7 +380,7 @@ export const ServiceCard = styled.div`
     .icon-wrapper {
       width: 48px;
       height: 48px;
-      border-radius: 12px;
+      border-radius: 24px;
       background: linear-gradient(135deg, rgba(163, 145, 133, 0.1), rgba(139, 125, 107, 0.1));
       display: flex;
       align-items: center;

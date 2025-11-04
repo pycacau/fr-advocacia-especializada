@@ -45,7 +45,7 @@ export const SocialProofContainer = styled.section`
       transform: translateX(-50%);
       width: 100px;
       height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(163, 145, 133, 0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(145, 145, 145, 0.4), transparent);
       border-radius: 1px;
       opacity: 0;
       animation: fadeInLine 1s ease-out 0.3s forwards;
@@ -111,14 +111,14 @@ export const TestimonialCard = styled.div`
     rgba(26, 24, 28, 0.95) 0%,
     rgba(28, 26, 30, 0.95) 100%
   );
-  border: 1px solid rgba(163, 145, 133, 0.2);
-  border-radius: 20px;
+  border: 1px solid rgba(145, 145, 145, 0.2);
+  border-radius: 40px;
   padding: 2.5rem;
   position: relative;
   transition: all 0.3s ease;
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.3),
-    0 0 60px rgba(163, 145, 133, 0.1),
+    0 0 60px rgba(145, 145, 145, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
 
@@ -126,13 +126,13 @@ export const TestimonialCard = styled.div`
     transform: translateY(-8px) scale(1.02);
     box-shadow:
       0 20px 50px rgba(0, 0, 0, 0.5),
-      0 0 100px rgba(163, 145, 133, 0.2),
+      0 0 100px rgba(145, 145, 145, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
 
     .card-decoration .decoration-line {
       width: 100%;
       background: linear-gradient(90deg, #a39185, #8b7d70);
-      box-shadow: 0 0 15px rgba(163, 145, 133, 0.5);
+      box-shadow: 0 0 15px rgba(145, 145, 145, 0.5);
     }
 
     .author-avatar {
@@ -142,7 +142,7 @@ export const TestimonialCard = styled.div`
 
     .quote-icon {
       transform: scale(1.1) rotate(5deg);
-      color: rgba(163, 145, 133, 0.6);
+      color: rgba(145, 145, 145, 0.6);
     }
   }
 
@@ -154,7 +154,7 @@ export const TestimonialCard = styled.div`
 
     .quote-icon {
       font-size: 4rem;
-      color: rgba(163, 145, 133, 0.3);
+      color: rgba(145, 145, 145, 0.3);
       font-family: 'Georgia', serif;
       line-height: 1;
       margin-top: -10px;
@@ -175,7 +175,7 @@ export const TestimonialCard = styled.div`
       &::before {
         content: '"';
         font-size: 2rem;
-        color: rgba(163, 145, 133, 0.2);
+        color: rgba(145, 145, 145, 0.2);
         position: absolute;
         top: -10px;
         left: -15px;
@@ -185,7 +185,7 @@ export const TestimonialCard = styled.div`
       &::after {
         content: '"';
         font-size: 2rem;
-        color: rgba(163, 145, 133, 0.2);
+        color: rgba(145, 145, 145, 0.2);
         position: absolute;
         bottom: -20px;
         right: -15px;
@@ -204,11 +204,11 @@ export const TestimonialCard = styled.div`
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(163, 145, 133, 0.2), rgba(139, 125, 107, 0.2));
+      background: linear-gradient(135deg, rgba(145, 145, 145, 0.2), rgba(139, 125, 107, 0.2));
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid rgba(163, 145, 133, 0.3);
+      border: 2px solid rgba(145, 145, 145, 0.3);
       backdrop-filter: blur(5px);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
@@ -221,7 +221,7 @@ export const TestimonialCard = styled.div`
         right: -2px;
         bottom: -2px;
         border-radius: 50%;
-        background: linear-gradient(135deg, rgba(163, 145, 133, 0.4), rgba(139, 125, 107, 0.4));
+        background: linear-gradient(135deg, rgba(145, 145, 145, 0.4), rgba(139, 125, 107, 0.4));
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: -1;
@@ -237,7 +237,7 @@ export const TestimonialCard = styled.div`
 
       &:hover {
         transform: scale(1.1);
-        box-shadow: 0 0 25px rgba(163, 145, 133, 0.6);
+        box-shadow: 0 0 25px rgba(145, 145, 145, 0.6);
 
         &::before {
           opacity: 1;
@@ -262,7 +262,7 @@ export const TestimonialCard = styled.div`
 
       .author-role {
         display: block;
-        color: rgba(163, 145, 133, 0.8);
+        color: rgba(145, 145, 145, 0.8);
         font-size: 0.9rem;
         font-weight: 400;
       }
@@ -277,7 +277,7 @@ export const TestimonialCard = styled.div`
     .decoration-line {
       flex: 1;
       height: 2px;
-      background: rgba(163, 145, 133, 0.2);
+      background: rgba(145, 145, 145, 0.2);
       border-radius: 1px;
       transition: all 0.3s ease;
     }
@@ -287,7 +287,7 @@ export const TestimonialCard = styled.div`
       height: 8px;
       border-radius: 50%;
       background: linear-gradient(135deg, #a39185, #8b7d70);
-      box-shadow: 0 0 10px rgba(163, 145, 133, 0.5);
+      box-shadow: 0 0 10px rgba(145, 145, 145, 0.5);
     }
   }
 

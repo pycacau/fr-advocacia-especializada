@@ -15,7 +15,7 @@ export const defaultTheme = {
     gradientLight: "linear-gradient(329.9deg, rgba(255, 255, 255, 0.08) 14.05%, rgba(255, 255, 255, 0.0368) 87%);",
     gradientBorder: "linear-gradient(137.62deg, rgba(255, 255, 255, 0.08) 1.79%, rgba(255, 255, 255, 0) 97.61%)",
 
-    primaryDark: "rgba(97, 52, 203, 1)",
-    primaryDefault: "rgba(130, 87, 229, 1)",
-    primaryLight: "rgba(153, 109, 255, 1)",
+    primaryDark: "#6b6b6b",
+    primaryDefault: "#919191",
+    primaryLight: "#b8b8b8",
 }

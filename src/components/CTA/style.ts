@@ -33,7 +33,7 @@ export const Content = styled.div`
     animation: slideInLeft 1s ease-out 0.3s forwards;
 
     .profile-image {
-      border-radius: 20px;
+      border-radius: 30px;
       box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.3),
         0 0 100px rgba(163, 145, 133, 0.2),

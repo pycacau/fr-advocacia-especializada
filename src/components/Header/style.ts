@@ -19,10 +19,10 @@ export const HeaderContainer = styled.header`
   padding: 0 1rem 0 1rem;
 
   background: ${(props) => props.theme.gradientDark};
-  filter: drop-shadow(4px 21px 32px #a39185);
+  filter: drop-shadow(4px 21px 32px #919191);
   backdrop-filter: blur(20px);
   box-shadow:
-    0 0 30px rgba(163, 145, 133, 0.4),
+    0 0 30px rgba(145, 145, 145, 0.4),
     0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
@@ -36,7 +36,7 @@ export const HeaderContainer = styled.header`
     height: 1px;
     background: linear-gradient(90deg,
       transparent,
-      rgba(163, 145, 133, 0.6),
+      rgba(145, 145, 145, 0.6),
       transparent
     );
     animation: headerGlow 3s ease-in-out infinite;
@@ -62,7 +62,7 @@ export const LogoContainer = styled.div`
     height: 100%;
     width: 100%;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 0 10px rgba(163, 145, 133, 0.3));
+    filter: drop-shadow(0 0 10px rgba(145, 145, 145, 0.3));
   }
 
   a:last-child {
@@ -70,7 +70,7 @@ export const LogoContainer = styled.div`
       opacity: 0;
       transform: translate(-100%, 0) scale(0.8);
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      filter: drop-shadow(0 0 20px rgba(163, 145, 133, 0.5));
+      filter: drop-shadow(0 0 20px rgba(145, 145, 145, 0.5));
     }
     overflow: hidden;
 
@@ -84,7 +84,7 @@ export const LogoContainer = styled.div`
       bottom: -2px;
       background: linear-gradient(45deg,
         transparent,
-        rgba(163, 145, 133, 0.4),
+        rgba(145, 145, 145, 0.4),
         transparent
       );
       border-radius: 8px;
@@ -99,7 +99,7 @@ export const LogoContainer = styled.div`
       img {
         transform: translate(0, 0) scale(1);
         opacity: 1;
-        filter: drop-shadow(0 0 25px rgba(163, 145, 133, 0.8));
+        filter: drop-shadow(0 0 25px rgba(145, 145, 145, 0.8));
       }
 
       &::before {
@@ -109,7 +109,7 @@ export const LogoContainer = styled.div`
 
     a:first-child img {
       transform: scale(1.05);
-      filter: drop-shadow(0 0 15px rgba(163, 145, 133, 0.6));
+      filter: drop-shadow(0 0 15px rgba(145, 145, 145, 0.6));
     }
   }
 
@@ -151,9 +151,9 @@ export const HeaderContent = styled.div`
         transform: translateY(-2px);
 
         button {
-          background: linear-gradient(135deg, #a39185, #8b7d6b);
+          background: linear-gradient(135deg, #919191, #6b6b6b);
           color: #fff;
-          box-shadow: 0 4px 15px rgba(163, 145, 133, 0.4);
+          box-shadow: 0 4px 15px rgba(145, 145, 145, 0.4);
           transform: scale(1.02);
         }
 
@@ -167,7 +167,7 @@ export const HeaderContent = styled.div`
           bottom: -2px;
           background: linear-gradient(45deg,
             transparent,
-            rgba(163, 145, 133, 0.3),
+            rgba(145, 145, 145, 0.3),
             transparent
           );
           border-radius: 8px;

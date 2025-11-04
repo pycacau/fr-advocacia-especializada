@@ -12,7 +12,7 @@ export const FooterContainer = styled.footer`
     linear-gradient(135deg, rgba(26, 24, 28, 0.98) 0%, rgba(20, 18, 22, 0.98) 100%),
     radial-gradient(circle at 30% 30%, rgba(163, 145, 133, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 70% 70%, rgba(139, 125, 107, 0.05) 0%, transparent 50%);
-  border-radius: 24px;
+  border-radius: 48px;
   border: 1px solid rgba(163, 145, 133, 0.3);
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.4),

@@ -9,10 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background:
-            linear-gradient(135deg, #1C1A22 0%, #25272A 50%, #1C1A22 100%),
-            radial-gradient(circle at 20% 80%, rgba(163, 145, 133, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(139, 125, 107, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 40% 40%, rgba(163, 145, 133, 0.05) 0%, transparent 50%);
+            linear-gradient(135deg, #001122 0%, #002244 50%, #001122 100%),
+            radial-gradient(circle at 20% 80%, rgba(145, 145, 145, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(107, 107, 107, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(145, 145, 145, 0.05) 0%, transparent 50%);
         background-attachment: fixed;
         color: #fff;
 
@@ -32,12 +32,12 @@ export const GlobalStyle = createGlobalStyle`
         &::-webkit-scrollbar {
         border-radius: 8px;
         width: 0.5rem;
-        background: linear-gradient(180deg, #1C1A22, #25272A);
+        background: linear-gradient(180deg, #001122, #002244);
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 8px;
-        background: linear-gradient(180deg, #a39185, #8b7d6b);
-        box-shadow: inset 0 0 10px rgba(163, 145, 133, 0.5);
+        background: linear-gradient(180deg, #919191, #6b6b6b);
+        box-shadow: inset 0 0 10px rgba(145, 145, 145, 0.5);
   }
     }
 
