@@ -60,7 +60,7 @@ export function Footer() {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.open('https://www.google.com/maps?q=CE-187,+235+-+Ubajara,+Ceará,+Brazil', '_blank', 'width=600,height=400');
+                    window.open('https://www.google.com/maps/place/Francisco+R%C3%B4ney+Advogados/@-3.921149,-40.8885908,17z/data=!3m1!4b1!4m6!3m5!1s0x84aea0e66822c679:0x7189654a910d6333!8m2!3d-3.921149!4d-40.8885908!16s%2Fg%2F11trsrqq1d?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D', '_blank', 'width=600,height=400');
                   }}
                   className="info-link"
                 >
