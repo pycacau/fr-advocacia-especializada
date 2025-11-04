@@ -85,7 +85,7 @@ export const ChatPopup = styled.div`
   align-items: center;
 
   @media (max-width: 820px) {
-    display: block;
+    display: none;
   }
 
   .whatsapp-link {

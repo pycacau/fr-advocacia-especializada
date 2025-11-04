@@ -9,8 +9,8 @@ export const SidebarButton = styled.img`
   top: 2rem;
   right: 2rem;
   z-index: 7;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 
   @media (min-width: 950px) {
     display: none;
