@@ -54,7 +54,7 @@ export function Footer() {
                 Escritório
               </h4>
               <div className="info-content">
-                <p className="info-text">CE-187, 235 - Ubajara, CE</p>
+                <p className="info-text">Francisco Rôney Advogado - Ubajara, CE</p>
                 <p className="info-text">CNPJ: 12.345.678/0001-90</p>
                 <a
                   href="#"
