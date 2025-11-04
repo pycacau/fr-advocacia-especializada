@@ -68,9 +68,7 @@ export function Header() {
           >
             <SmallInvisibleButton>Sobre mim</SmallInvisibleButton>
           </a>
-          <a href="./Process Search/index.html">
-            <SmallInvisibleButton>Meus processos</SmallInvisibleButton>
-          </a>
+
           <a
             href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173"
             target="_blank"

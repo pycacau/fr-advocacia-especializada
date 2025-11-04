@@ -42,9 +42,7 @@ export function Sidebar() {
             <a href="#services">
               <SmallInvisibleButton>Áreas de atuação</SmallInvisibleButton>
             </a>
-            <a href="./Login Site/index.html">
-              <SmallInvisibleButton>Meus processos</SmallInvisibleButton>
-            </a>
+
             <a
               href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173"
               target="_blank"
