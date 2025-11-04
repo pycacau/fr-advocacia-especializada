@@ -113,17 +113,7 @@ export const HomeContainer = styled.section`
     }
 
     @media (max-width: 480px) {
-      left: 10px;
-      gap: 0.8rem;
-
-      a {
-        padding: 0.5rem;
-
-        img {
-          width: 24px;
-          height: 24px;
-        }
-      }
+      display: none;
     }
   }
 
@@ -353,10 +343,12 @@ export const HomeContainer = styled.section`
     flex-direction: column;
     min-height: auto;
     height: auto;
+    padding: 0 1rem;
 
     .homeBg {
       display: flex;
       justify-content: center;
+      margin-top: 2rem;
     }
 
     .paralaxContainer {
@@ -364,10 +356,14 @@ export const HomeContainer = styled.section`
       margin-top: 2rem;
       right: 0;
     }
+
+    .branchBg {
+      display: none;
+    }
   }
 
   @media (max-width: 480px) {
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
 
     .paralaxContainer {
       margin-top: 1.5rem;
@@ -648,21 +644,7 @@ export const HomeContent = styled.div`
     }
 
     .buttonContainer {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      width: 100%;
-      max-width: 100%;
-
-      a {
-        width: 100%;
-        max-width: 306px;
-      }
-
-      button {
-        width: 100%;
-        max-width: 100%;
-      }
+      display: none;
     }
   }
 

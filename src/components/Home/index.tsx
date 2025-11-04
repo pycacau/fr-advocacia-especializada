@@ -40,17 +40,6 @@ export function Home() {
               Entrar em Contato
             </DefaultButton>
           </a>
-          <a
-            href="#services"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById('services')
-              if (element)
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }}
-          >
-            <InvisibleButton>Saber mais</InvisibleButton>
-          </a>
         </div>
       </HomeContent>
 
