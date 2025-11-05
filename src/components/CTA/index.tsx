@@ -59,29 +59,34 @@ export function CTA() {
           <h1 className="cta-title">Sobre mim</h1>
           <div className="text-block">
             <p className="cta-description">
-              O Dr. Roney é um advogado especializado em direito civil, trabalhista e previdenciário,
-              com mais de 10 anos de experiência. Formado pela Universidade de São Paulo,
-              possui especialização em Direito Empresarial e é membro da OAB-SP.
+              Sou o Dr. Roney, advogado especializado em direito civil, trabalhista e previdenciário, 
+              com mais de 10 anos de experiência. Sou formado pelo Centro Universitário INTA (UNINTA), 
+              professor na VIASAPIENS
+               e atualmente estou cursando mestrado na Universidade Estadual Vale do Acaraú (UVA).
             </p>
             <p className="cta-description">
-              Atua com dedicação em cada caso, oferecendo atendimento personalizado e soluções
-              jurídicas eficazes para proteger seus direitos e interesses. Com uma abordagem
-              ética e transparente, o Dr. Roney busca sempre a melhor solução para seus clientes,
-              garantindo justiça e proteção em todas as situações.
+              Atuo com dedicação em cada caso, oferecendo um atendimento personalizado e 
+              soluções jurídicas eficazes para proteger os direitos e interesses de meus clientes.
+               Com uma abordagem ética e transparente,
+               busco sempre a melhor solução, garantindo justiça e proteção em todas as situações.
             </p>
           </div>
           <div className="credentials">
             <div className="credential-item">
-              <img src={courtIcon} alt="Universidade" className="credential-icon" />
-              <span>Universidade de São Paulo</span>
-            </div>
-            <div className="credential-item">
-              <img src={documentIcon} alt="OAB" className="credential-icon" />
-              <span>OAB-SP</span>
+              <img src={courtIcon} alt="Formado no UNINTA" className="credential-icon" />
+              <span><a href="https://www.uninta.edu.br/" target="_blank" rel="noopener noreferrer">Formado no UNINTA</a></span>
             </div>
             <div className="credential-item">
               <img src={scaleIcon} alt="Experiência" className="credential-icon" />
               <span>+10 anos de experiência</span>
+            </div>
+            <div className="credential-item">
+              <img src={documentIcon} alt="Mestrando na UVA" className="credential-icon" />
+              <span><a href="https://www.uvace.edu.br/" target="_blank" rel="noopener noreferrer">Mestrando na UVA</a></span>
+            </div>
+            <div className="credential-item">
+              <img src={courtIcon} alt="Professor na VIASAPIENS" className="credential-icon" />
+              <span><a href="https://www.viasapiens.com.br/" target="_blank" rel="noopener noreferrer">Professor na VIASAPIENS</a></span>
             </div>
           </div>
         </div>

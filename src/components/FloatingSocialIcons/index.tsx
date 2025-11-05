@@ -20,7 +20,7 @@ export function FloatingSocialIcons() {
       </a>
       <a
         target="_blank"
-        href="https://www.instagram.com/roneysousa/"
+        href="https://www.instagram.com/roneyadvogado/"
         rel="noreferrer"
       >
         <FaInstagram size={24} color="white" />

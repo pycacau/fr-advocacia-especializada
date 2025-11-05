@@ -190,8 +190,8 @@ export const Content = styled.div`
     }
 
     .credentials {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
 
       .credential-item {
@@ -261,6 +261,17 @@ export const Content = styled.div`
           font-size: 1rem;
           color: ${(props) => props.theme.gray200};
           transition: all 0.3s ease;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: #a39185;
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
@@ -324,6 +335,7 @@ export const Content = styled.div`
     }
 
     .text-content .credentials {
+      grid-template-columns: 1fr;
       align-items: center;
 
       .credential-item {

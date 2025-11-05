@@ -52,7 +52,7 @@ export const SocialProofContainer = styled.section`
     }
   }
 
-  .testimonials-grid {
+  .videos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2.5rem;
@@ -71,7 +71,7 @@ export const SocialProofContainer = styled.section`
       margin-bottom: 3rem;
     }
 
-    .testimonials-grid {
+    .videos-grid {
       gap: 2rem;
     }
   }
@@ -84,7 +84,7 @@ export const SocialProofContainer = styled.section`
       margin-bottom: 2.5rem;
     }
 
-    .testimonials-grid {
+    .videos-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
       padding: 0 1rem;
@@ -99,9 +99,47 @@ export const SocialProofContainer = styled.section`
       margin-bottom: 2rem;
     }
 
-    .testimonials-grid {
+    .videos-grid {
       gap: 1.5rem;
     }
+  }
+`
+
+export const VideoCard = styled.div`
+  background: linear-gradient(
+    135deg,
+    rgba(26, 24, 28, 0.95) 0%,
+    rgba(28, 26, 30, 0.95) 100%
+  );
+  border: 1px solid rgba(145, 145, 145, 0.2);
+  border-radius: 20px;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(145, 145, 145, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.5),
+      0 0 100px rgba(145, 145, 145, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
   }
 `
 

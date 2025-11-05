@@ -169,8 +169,8 @@ export const HomeContainer = styled.section`
 
   .paralaxItem {
     position: absolute;
-    width: 396px;
-    height: 139px;
+    width: 300px;
+    height: 110px;
     right: -40%;
     top: 70%;
 
@@ -179,8 +179,8 @@ export const HomeContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem;
-    gap: 8px;
+    padding: 1.5rem;
+    gap: 6px;
 
     background:
       linear-gradient(135deg, rgba(163, 145, 133, 0.95), rgba(139, 125, 107, 0.9)),
@@ -232,8 +232,8 @@ export const HomeContainer = styled.section`
     p {
       font-family: 'Lato';
       font-weight: 400;
-      font-size: 1.5rem;
-      line-height: 29px;
+      font-size: 1.25rem;
+      line-height: 1.4;
       color: ${(props) => props.theme.gray200};
       opacity: 0.9;
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -243,8 +243,8 @@ export const HomeContainer = styled.section`
     strong {
       font-family: 'Lato';
       font-weight: 400;
-      font-size: 2rem;
-      line-height: 2.37rem;
+      font-size: 1.5rem;
+      line-height: 1.2;
       color: ${(props) => props.theme.gray100};
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -286,19 +286,19 @@ export const HomeContainer = styled.section`
       top: 10%;
 
       .paralaxItem {
-        width: 273px;
-        height: 96px;
-        padding: 1.37rem;
-        gap: 5.5px;
+        width: 280px;
+        min-height: 100px;
+        padding: 1.5rem;
+        gap: 0.5rem;
 
         p {
-          font-size: 1rem;
-          line-height: 20px;
+          font-size: 1.1rem;
+          line-height: 1.4;
         }
 
         strong {
-          font-size: 1.37rem;
-          line-height: 1.32rem;
+          font-size: 1.5rem;
+          line-height: 1.2;
         }
       }
     }
@@ -366,16 +366,16 @@ export const HomeContainer = styled.section`
 
   @keyframes branchFloat {
     0%, 100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translateY(0px) rotate(0deg) scaleX(-1);
     }
     25% {
-      transform: translateY(-5px) rotate(1deg);
+      transform: translateY(-5px) rotate(1deg) scaleX(-1);
     }
     50% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translateY(0px) rotate(0deg) scaleX(-1);
     }
     75% {
-      transform: translateY(5px) rotate(-1deg);
+      transform: translateY(5px) rotate(-1deg) scaleX(-1);
     }
   }
 
@@ -458,7 +458,7 @@ export const HomeContent = styled.div`
     color: #a8a8aa;
     opacity: 0.9;
 
-    animation: showElementRight 1.1s cubic-bezier(0.4, 0, 0.2, 1), textFade 3s ease-in-out infinite alternate;
+    animation: showElementRight 1.1s cubic-bezier(0.4, 0, 0.2, 1);
 
     width: 100%;
     max-width: 350px;

@@ -68,6 +68,17 @@ export function Header() {
           >
             <SmallInvisibleButton>Sobre mim</SmallInvisibleButton>
           </a>
+          <a
+            href="#videos"
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById('videos')
+              if (element)
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+          >
+            <SmallInvisibleButton>Vídeos</SmallInvisibleButton>
+          </a>
 
           <a
             href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173"
