@@ -33,6 +33,8 @@ export const Content = styled.div`
     animation: slideInLeft 1s ease-out 0.3s forwards;
 
     .profile-image {
+      width: 496px;
+      height: 680px;
       border-radius: 30px;
       box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.3),

@@ -4,11 +4,13 @@ import { Header } from '../Header'
 import { Home } from '../Home'
 import { Services } from '../Services'
 import { SocialProof } from '../SocialProof'
+import { Experience } from '../Experience'
 import { ChatPopup, MainContainer, SocialLinks } from './style'
 import linkedinImg from '../../assets/linkedin_icon.svg'
 import faceImg from '../../assets/face_icon.svg'
 import instaImg from '../../assets/insta_icon.svg'
 import wppImg from '../../assets/wpp-icon.svg'
+import branchBgImg from '../../assets/branch_bg.png'
 import { Sidebar } from '../Sidebar'
 import { useEffect, useRef } from 'react'
 
@@ -47,7 +49,9 @@ export function Main() {
       <Home />
       <Services />
       <CTA />
+      <Experience />
       <SocialProof />
+      <img className="branchBg" src={branchBgImg} alt="ramo fundo" />
       <ChatPopup>
         <a
           href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173"

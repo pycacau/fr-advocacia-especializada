@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 export const SocialProofContainer = styled.section`
-  padding: 6rem 0;
+  padding: 3rem 0;
   position: relative;
   overflow: visible;
 
   .section-title {
     color: ${(props) => props.theme.gray100};
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 300;
     text-align: center;
     margin-bottom: 4rem;
@@ -23,6 +23,9 @@ export const SocialProofContainer = styled.section`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 0 30px rgba(163, 145, 133, 0.4);
+
+    animation: titleGlow 4s ease-in-out infinite;
 
     &::after {
       content: '';
@@ -106,29 +109,47 @@ export const SocialProofContainer = styled.section`
 `
 
 export const VideoCard = styled.div`
-  background: linear-gradient(
-    135deg,
-    rgba(26, 24, 28, 0.95) 0%,
-    rgba(28, 26, 30, 0.95) 100%
-  );
-  border: 1px solid rgba(145, 145, 145, 0.2);
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.9)), ${(props) => props.theme.gradientBorder};
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 1rem;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.3),
-    0 0 60px rgba(145, 145, 145, 0.1),
+    0 10px 30px rgba(31, 41, 55, 0.3),
+    0 0 60px rgba(31, 41, 55, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(20px);
   overflow: hidden;
+  transform-style: preserve-3d;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
 
   &:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-15px) scale(1.08) rotateX(8deg) rotateY(5deg);
     box-shadow:
-      0 20px 50px rgba(0, 0, 0, 0.5),
-      0 0 100px rgba(145, 145, 145, 0.2),
+      0 20px 50px rgba(31, 41, 55, 0.8),
+      0 0 100px rgba(31, 41, 55, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    &::before {
+      opacity: 1;
+    }
   }
 
   iframe {
@@ -424,6 +445,15 @@ export const globalAnimations = `
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes titleGlow {
+    0%, 100% {
+      text-shadow: 0 0 30px rgba(163, 145, 133, 0.4);
+    }
+    50% {
+      text-shadow: 0 0 50px rgba(163, 145, 133, 0.8), 0 0 70px rgba(163, 145, 133, 0.6);
     }
   }
 

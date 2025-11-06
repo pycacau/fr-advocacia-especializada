@@ -38,9 +38,10 @@ export const DefaultButton = styled.button`
 
   &:hover {
     background: ${(props) => props.theme.primaryDark};
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(163, 145, 133, 0.6),
-      0 0 50px rgba(163, 145, 133, 0.3);
+    transform: translateY(-15px) scale(1.08) rotateX(8deg) rotateY(5deg);
+    box-shadow: 0 20px 50px rgba(31, 41, 55, 0.8),
+      0 0 100px rgba(31, 41, 55, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
 
   &:hover::before {

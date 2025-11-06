@@ -1,5 +1,5 @@
 import { Content, CTAContainer } from './style'
-import ctaImg from '../../assets/roney.png'
+import ctaImg from '../../assets/roney.svg'
 import { DefaultButton } from '../Buttons/Buttons'
 import branchBgImg from '../../assets/branch_bg.png'
 import scaleIcon from '../../assets/card_icon_1.svg'
@@ -36,8 +36,6 @@ export function CTA() {
       <Content ref={contentRef}>
         <div ref={imageRef} className="image-container">
           <img
-            width={496}
-            height={680}
             src={ctaImg}
             alt="Dr. Roney - Advogado Especialista"
             className="profile-image"

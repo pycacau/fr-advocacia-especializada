@@ -12,7 +12,7 @@ export const HomeContainer = styled.section`
   min-height: 100vh;
   height: 100vh;
 
-  padding: 0 2rem 0 2rem;
+  padding: 120px 2rem 0 2rem;
 
   /* Ícones sociais fixados na seção Home */
   .floating-social-icons {
@@ -157,7 +157,7 @@ export const HomeContainer = styled.section`
   .paralaxContainer {
     position: absolute;
     right: 10.5%;
-    top: 0;
+    top: 2rem;
     z-index: 1;
 
     animation: showElementLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -398,11 +398,12 @@ export const HomeContainer = styled.section`
   }
 `
 export const HomeContent = styled.div`
-  margin: 9rem 0 0 16%;
+  margin: 2rem 0 0 16%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   z-index: 2;
   position: relative;
 
@@ -463,7 +464,7 @@ export const HomeContent = styled.div`
     width: 100%;
     max-width: 350px;
 
-    margin: 6.81rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
     padding: 0 1.5rem 0 0;
 
     /* Sombra de texto sutil */
@@ -482,9 +483,11 @@ export const HomeContent = styled.div`
 
     a {
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      padding: 0.25rem;
 
       &:hover {
-        transform: translateY(-8px) scale(1.02);
+        transform: scale(1.05);
       }
 
       button {
@@ -492,6 +495,8 @@ export const HomeContent = styled.div`
         position: relative;
         overflow: hidden;
         border-radius: 8px;
+        cursor: pointer;
+        padding: 1rem 2rem;
 
         /* Brilho sutil */
         &::before {
@@ -559,11 +564,11 @@ export const HomeContent = styled.div`
   }
 
   @media (max-width: 1120px) {
-    margin: 9rem 0 0 10%;
+    margin: 6rem 0 0 10%;
   }
 
   @media (max-width: 1105px) {
-    margin: 9rem 0 0 9%;
+    margin: 6rem 0 0 9%;
   }
 
   @media (max-width: 895px) {
@@ -575,7 +580,7 @@ export const HomeContent = styled.div`
   }
 
   @media (max-width: 821px) {
-    margin: 7rem 0 0 0;
+    margin: 4rem 0 0 0;
 
     h1 {
       font-size: 2rem;

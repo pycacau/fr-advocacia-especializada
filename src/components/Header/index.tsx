@@ -81,7 +81,7 @@ export function Header() {
           </a>
 
           <a
-            href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173"
+            href="https://api.whatsapp.com/send?phone=5588999453173"
             target="_blank"
             rel="noreferrer"
           >

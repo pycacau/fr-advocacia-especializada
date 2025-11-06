@@ -7,8 +7,8 @@ export const HeaderContainer = styled.header`
   align-items: center;
 
   width: 100%;
-  max-height: 100px;
-  height: 100px;
+  max-height: 120px;
+  height: 120px;
 
   z-index: 6;
   position: fixed;
@@ -19,11 +19,11 @@ export const HeaderContainer = styled.header`
   padding: 0 1rem 0 1rem;
 
   background: ${(props) => props.theme.gradientDark};
-  filter: drop-shadow(4px 21px 32px #919191);
+  filter: drop-shadow(2px 10px 16px rgba(145, 145, 145, 0.3));
   backdrop-filter: blur(20px);
   box-shadow:
-    0 0 30px rgba(145, 145, 145, 0.4),
-    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(145, 145, 145, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
   /* Brilho sutil no topo */
@@ -36,7 +36,7 @@ export const HeaderContainer = styled.header`
     height: 1px;
     background: linear-gradient(90deg,
       transparent,
-      rgba(145, 145, 145, 0.6),
+      rgba(145, 145, 145, 0.3),
       transparent
     );
     animation: headerGlow 3s ease-in-out infinite;
@@ -59,8 +59,8 @@ export const LogoContainer = styled.div`
   gap: 0.5rem;
 
   img {
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 0 10px rgba(145, 145, 145, 0.3));
   }
@@ -150,13 +150,6 @@ export const HeaderContent = styled.div`
       &:hover {
         transform: translateY(-2px);
 
-        button {
-          background: linear-gradient(135deg, #919191, #6b6b6b);
-          color: #fff;
-          box-shadow: 0 4px 15px rgba(145, 145, 145, 0.4);
-          transform: scale(1.02);
-        }
-
         /* Efeito de brilho no hover */
         &::before {
           content: '';
@@ -175,6 +168,10 @@ export const HeaderContent = styled.div`
           opacity: 0;
           animation: navGlow 0.6s ease-out;
         }
+      }
+
+      button {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
     }
   }

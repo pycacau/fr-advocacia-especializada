@@ -9,14 +9,14 @@ export const FooterContainer = styled.footer`
   margin-top: 4rem;
 
   background:
-    linear-gradient(135deg, rgba(26, 24, 28, 0.98) 0%, rgba(20, 18, 22, 0.98) 100%),
-    radial-gradient(circle at 30% 30%, rgba(163, 145, 133, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(139, 125, 107, 0.05) 0%, transparent 50%);
-  border-radius: 48px;
-  border: 1px solid rgba(163, 145, 133, 0.3);
+    linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%),
+    radial-gradient(circle at 30% 30%, rgba(31, 41, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(17, 24, 39, 0.05) 0%, transparent 50%);
+  border-radius: 48px 48px 0 0;
+  border: 1px solid rgba(31, 41, 55, 0.3);
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 100px rgba(163, 145, 133, 0.1),
+    0 0 100px rgba(31, 41, 55, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
 
@@ -382,11 +382,12 @@ export const FooterContent = styled.div`
         }
 
         &:hover {
-          transform: translateY(-5px) scale(1.1);
+          transform: translateY(-15px) scale(1.08) rotateX(8deg) rotateY(5deg);
           box-shadow:
-            0 10px 30px rgba(163, 145, 133, 0.3),
-            0 0 50px rgba(163, 145, 133, 0.2);
-          border-color: rgba(163, 145, 133, 0.6);
+            0 20px 50px rgba(31, 41, 55, 0.8),
+            0 0 100px rgba(31, 41, 55, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+          border-color: rgba(31, 41, 55, 0.6);
 
           &::before {
             left: 100%;

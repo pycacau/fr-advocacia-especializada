@@ -18,6 +18,27 @@ export const MainContainer = styled.main`
     width: 100%;
   }
 
+  .branchBg {
+    position: fixed;
+    right: -25%;
+    top: -8%;
+    transform: scaleX(-1);
+    rotate: -10deg;
+    opacity: 0.3;
+    filter: blur(1px) drop-shadow(0 0 20px rgba(145, 145, 145, 0.2));
+    z-index: 0;
+    animation: branchFloat 6s ease-in-out infinite;
+  }
+
+  @keyframes branchFloat {
+    0%, 100% {
+      transform: scaleX(-1) rotate(-10deg) translateY(0);
+    }
+    50% {
+      transform: scaleX(-1) rotate(-10deg) translateY(-10px);
+    }
+  }
+
   @media (max-width: 820px) {
     overflow-x: hidden;
   }

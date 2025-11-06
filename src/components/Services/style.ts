@@ -180,11 +180,11 @@ export const ServiceCard = styled.div`
   z-index: 1;
 
   background: linear-gradient(
-        rgba(26, 24, 28, 0.95),
-        rgba(26, 24, 28, 0.95)
+        rgba(31, 41, 55, 0.95),
+        rgba(17, 24, 39, 0.95)
       )
       padding-box,
-    linear-gradient(135deg, rgba(163, 145, 133, 0.3), rgba(139, 125, 107, 0.3)) border-box;
+    linear-gradient(135deg, rgba(31, 41, 55, 0.3), rgba(17, 24, 39, 0.3)) border-box;
   border-radius: 48px;
   border: 1px solid transparent;
 
@@ -202,7 +202,7 @@ export const ServiceCard = styled.div`
   backdrop-filter: blur(15px);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
-    0 0 60px rgba(163, 145, 133, 0.1),
+    0 0 60px rgba(31, 41, 55, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -219,7 +219,7 @@ export const ServiceCard = styled.div`
 
   &:hover,
   &:active {
-    transform: translateY(-12px) scale(1.03) rotateX(2deg);
+    transform: translateY(-15px) scale(1.08) rotateX(8deg) rotateY(5deg);
     box-shadow:
       0 25px 60px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
