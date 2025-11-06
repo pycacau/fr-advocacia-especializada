@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
 
   width: 100%;
-  max-height: 120px;
+  max-height: 110px;
   height: 120px;
 
   z-index: 6;
@@ -46,7 +46,7 @@ export const HeaderContainer = styled.header`
   animation: headerSlideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 600px) {
-    max-height: 72px;
+    max-height: 100px;
     padding: 0 1rem;
   }
 `
@@ -59,8 +59,8 @@ export const LogoContainer = styled.div`
   gap: 0.5rem;
 
   img {
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 0 10px rgba(145, 145, 145, 0.3));
   }
@@ -148,7 +148,7 @@ export const HeaderContent = styled.div`
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
       &:hover {
-        transform: translateY(-2px);
+        transform: scale(1.05);
 
         /* Efeito de brilho no hover */
         &::before {
@@ -205,15 +205,12 @@ export const HeaderContent = styled.div`
   @keyframes navGlow {
     0% {
       opacity: 0;
-      transform: scale(0.8);
     }
     50% {
       opacity: 0.6;
-      transform: scale(1.1);
     }
     100% {
       opacity: 0;
-      transform: scale(1);
     }
   }
 `

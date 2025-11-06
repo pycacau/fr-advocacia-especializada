@@ -1,31 +1,9 @@
-# TODO - Reconstrução dos Sites FR Advocacia
+# TODO: Corrigir Header e Animações dos Botões
 
-## Site Principal (React/TypeScript)
-- [x] Refatorar componente Home com animações avançadas, brilhos e efeitos 3D
-- [x] Melhorar componente Header com animações suaves e efeitos visuais
-- [x] Refatorar componente Services com transições elegantes e brilhos
-- [x] Melhorar componente CTA com efeitos de hover avançados
-- [ ] Refatorar componente SocialProof com animações parallax melhoradas
-- [ ] Melhorar componente Footer com efeitos visuais profissionais
-- [ ] Adicionar animações de entrada para todos os componentes
-- [ ] Implementar efeitos de brilho e sombras dinâmicas
-- [ ] Otimizar responsividade com animações fluidas
+## Tarefas Pendentes
+- [ ] Atualizar animação dos botões de navegação (Home, Áreas de atuação, etc.) para scale(1.05) com brilho fade-in mais suave
+- [ ] Adicionar animação sutil à logo no hover (scale(1.05) com brilho fade)
+- [ ] Modificar keyframe navGlow para um fade-in sem scale
 
-## Site de Consulta (HTML)
-- [ ] Refatorar design com animações CSS avançadas
-- [ ] Adicionar efeitos de brilho e transições suaves
-- [ ] Melhorar formulário de busca com validação visual
-- [ ] Implementar animações de loading profissional
-- [ ] Adicionar efeitos hover elegantes
-- [ ] Melhorar responsividade com animações
-- [ ] Implementar transições de página suaves
-
-## Testes e Validação
-- [ ] Testar funcionalidade de busca de processos
-- [ ] Verificar responsividade em diferentes dispositivos
-- [ ] Validar animações e efeitos visuais
-- [ ] Testar performance das animações
-
-## Backup e Reversão
-- [x] Criar backup dos arquivos originais
-- [ ] Implementar script de reversão se necessário
+## Arquivos Afetados
+- fr-advocacia-especializada/src/components/Header/style.ts

@@ -158,7 +158,7 @@ export const HomeContainer = styled.section`
     position: absolute;
     right: 10.5%;
     top: 2rem;
-    z-index: 1;
+    z-index: 100;
 
     animation: showElementLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -308,7 +308,7 @@ export const HomeContainer = styled.section`
     flex-direction: column;
     min-height: auto;
     height: auto;
-    padding: 0 1rem;
+    padding: 72px 1rem 0 1rem;
 
     .homeBg {
       display: flex;

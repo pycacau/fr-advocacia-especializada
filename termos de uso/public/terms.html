@@ -4,66 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos de Uso - Francisco Roney Advocacia Especializada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --gray900: rgba(20, 20, 21, 1);
+            --gray800: rgba(28, 26, 34, 1);
+            --gray700: rgba(37, 35, 42, 1);
+            --gray600: rgba(80, 78, 85, 1);
+            --gray500: rgba(118, 117, 121, 1);
+            --gray400: rgba(125, 122, 133, 1);
+            --gray300: rgba(168, 168, 170, 1);
+            --gray200: rgba(199, 198, 200, 1);
+            --gray100: rgba(255, 255, 255, 1);
+            --gray050: rgba(255, 255, 255, 0.8);
+            --gradientDark: linear-gradient(90.1deg, rgba(20, 20, 21, 0) 1.59%, rgba(20, 20, 21, 0.24) 99.92%);
+            --gradientSection: linear-gradient(180deg, #25232A 0%, rgba(37, 35, 42, 0) 100%);
+            --gradientLight: linear-gradient(329.9deg, rgba(255, 255, 255, 0.08) 14.05%, rgba(255, 255, 255, 0.0368) 87%);
+            --gradientBorder: linear-gradient(137.62deg, rgba(255, 255, 255, 0.08) 1.79%, rgba(255, 255, 255, 0) 97.61%);
+            --primaryDark: #6b6b6b;
+            --primaryDefault: #919191;
+            --primaryLight: #b8b8b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Fira Sans', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            color: var(--gray100);
+            background:
+                linear-gradient(135deg, #001122 0%, #002244 50%, #001122 100%),
+                radial-gradient(circle at 20% 80%, rgba(145, 145, 145, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(107, 107, 107, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(145, 145, 145, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
             padding: 20px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-behavior: smooth;
+
+            &::-webkit-scrollbar {
+                border-radius: 8px;
+                width: 0.5rem;
+                background: linear-gradient(180deg, #001122, #002244);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                background: linear-gradient(180deg, #919191, #6b6b6b);
+                box-shadow: inset 0 0 10px rgba(145, 145, 145, 0.5);
+            }
+        }
+
+        body, input, textarea, button {
+            font-family: 'roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        h1 {
+            font-family: 'Lato';
+            font-weight: 400;
+            font-size: 4rem;
+            line-height: 125%;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--gradientSection);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .header {
+            background: var(--gradientDark);
+            padding: 40px 30px;
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #a39185;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradientLight);
+            opacity: 0.1;
         }
 
         .header h1 {
-            color: #a39185;
-            font-size: 2.5rem;
+            font-family: 'Lato', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--gray100);
             margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
         }
 
         .header p {
-            color: #666;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: var(--gray300);
+            position: relative;
+            z-index: 1;
         }
 
         .content {
-            background: white;
-            padding: 30px;
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: var(--gradientLight);
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gradientBorder);
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primaryDefault) 0%, var(--primaryLight) 100%);
+            border-radius: 2px 0 0 2px;
         }
 
         h2 {
-            color: #a39185;
+            font-family: 'Lato', sans-serif;
             font-size: 1.8rem;
-            margin-top: 30px;
+            font-weight: 700;
+            color: var(--gray100);
             margin-bottom: 15px;
-            border-left: 4px solid #a39185;
-            padding-left: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--primaryDefault);
+            border-radius: 50%;
         }
 
         h3 {
-            color: #555;
-            font-size: 1.4rem;
-            margin-top: 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gray200);
+            margin-top: 20px;
             margin-bottom: 10px;
         }
 
         p {
             margin-bottom: 15px;
             text-align: justify;
+            color: var(--gray300);
         }
 
         ul, ol {
             margin-bottom: 15px;
             padding-left: 30px;
+            color: var(--gray300);
         }
 
         li {
@@ -71,112 +201,171 @@
         }
 
         .highlight {
-            background: rgba(163, 145, 133, 0.1);
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #a39185;
-            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(145, 145, 145, 0.1) 0%, rgba(145, 145, 145, 0.05) 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primaryDefault);
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .highlight::before {
+            content: '⚖️';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+
+        .highlight strong {
+            color: var(--primaryLight);
         }
 
         .contact-info {
-            background: linear-gradient(135deg, rgba(163, 145, 133, 0.05) 0%, rgba(163, 145, 133, 0.1) 100%);
-            padding: 20px;
-            border-radius: 8px;
+            background: var(--gradientDark);
+            padding: 25px;
+            border-radius: 10px;
             margin: 30px 0;
             text-align: center;
+            border: 1px solid var(--gradientBorder);
         }
 
         .contact-info strong {
-            color: #a39185;
+            color: var(--primaryLight);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: var(--gray300);
+            margin-bottom: 5px;
         }
 
         .last-updated {
             text-align: center;
-            color: #666;
+            color: var(--gray500);
             font-size: 0.9rem;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid var(--gray700);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .content {
+                padding: 20px 15px;
+            }
+            .section {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Termos de Uso</h1>
-        <p>Francisco Roney Advocacia Especializada</p>
-    </div>
-
-    <div class="content">
-        <h2>1. Aceitação dos Termos</h2>
-        <p>Ao acessar e utilizar os serviços oferecidos por Francisco Roney Advocacia Especializada, você concorda em cumprir e estar vinculado aos seguintes Termos de Uso. Se você não concordar com estes termos, por favor, não utilize nossos serviços.</p>
-
-        <h2>2. Serviços Oferecidos</h2>
-        <p>Francisco Roney Advocacia Especializada oferece serviços jurídicos especializados, incluindo:</p>
-        <ul>
-            <li>Consultoria jurídica</li>
-            <li>Representação em processos judiciais</li>
-            <li>Assessoria preventiva</li>
-            <li>Mediação e conciliação</li>
-        </ul>
-
-        <h2>3. Responsabilidades do Cliente</h2>
-        <p>Ao contratar nossos serviços, o cliente se compromete a:</p>
-        <ol>
-            <li>Fornecer todas as informações necessárias de forma completa e verídica</li>
-            <li>Cooperar com o advogado nos prazos estabelecidos</li>
-            <li>Respeitar os honorários e condições de pagamento acordados</li>
-            <li>Manter sigilo sobre informações confidenciais do caso</li>
-        </ol>
-
-        <h2>4. Honorários e Pagamento</h2>
-        <p>Os honorários advocatícios serão estabelecidos conforme contrato específico, podendo incluir:</p>
-        <ul>
-            <li>Valor fixo por serviço</li>
-            <li>Porcentagem sobre o valor da causa</li>
-            <li>Honorários de sucumbência</li>
-        </ul>
-        <p>O pagamento deve ser efetuado conforme os prazos acordados, sob pena de suspensão dos serviços.</p>
-
-        <h2>5. Confidencialidade</h2>
-        <p>Todas as informações compartilhadas entre cliente e advogado estão protegidas pelo sigilo profissional, conforme previsto no Estatuto da Advocacia (Lei nº 8.906/1994) e Código de Ética e Disciplina da OAB.</p>
-
-        <div class="highlight">
-            <strong>Importante:</strong> A quebra do sigilo profissional é crime previsto no artigo 154 do Código Penal, punível com detenção de 3 meses a 1 ano.
+    <div class="container">
+        <div class="header">
+            <h1>Termos de Uso</h1>
+            <p>Francisco Roney Advocacia Especializada</p>
         </div>
 
-        <h2>6. Limitação de Responsabilidade</h2>
-        <p>Francisco Roney Advocacia Especializada envida seus melhores esforços para prestar serviços de qualidade, porém não se responsabiliza por:</p>
-        <ul>
-            <li>Resultados específicos em processos judiciais</li>
-            <li>Perdas decorrentes de decisões tomadas pelo cliente</li>
-            <li>Informações obtidas de terceiros</li>
-        </ul>
+        <div class="content">
+            <div class="section">
+                <h2>1. Aceitação dos Termos</h2>
+                <p>Ao acessar e utilizar os serviços oferecidos por Francisco Roney Advocacia Especializada, você concorda em cumprir e estar vinculado aos seguintes Termos de Uso. Se você não concordar com estes termos, por favor, não utilize nossos serviços.</p>
+            </div>
 
-        <h2>7. Propriedade Intelectual</h2>
-        <p>Todo o conteúdo deste site, incluindo textos, imagens, logotipos e materiais informativos, são propriedade de Francisco Roney Advocacia Especializada e estão protegidos por leis de direitos autorais.</p>
+            <div class="section">
+                <h2>2. Serviços Oferecidos</h2>
+                <p>Francisco Roney Advocacia Especializada oferece serviços jurídicos especializados, incluindo:</p>
+                <ul>
+                    <li>Consultoria jurídica</li>
+                    <li>Representação em processos judiciais</li>
+                    <li>Assessoria preventiva</li>
+                    <li>Mediação e conciliação</li>
+                </ul>
+            </div>
 
-        <h2>8. Modificações dos Termos</h2>
-        <p>Estes Termos de Uso podem ser modificados a qualquer momento, mediante comunicação prévia aos clientes. O uso continuado dos serviços após as modificações constitui aceitação dos novos termos.</p>
+            <div class="section">
+                <h2>3. Responsabilidades do Cliente</h2>
+                <p>Ao contratar nossos serviços, o cliente se compromete a:</p>
+                <ol>
+                    <li>Fornecer todas as informações necessárias de forma completa e verídica</li>
+                    <li>Cooperar com o advogado nos prazos estabelecidos</li>
+                    <li>Respeitar os honorários e condições de pagamento acordados</li>
+                    <li>Manter sigilo sobre informações confidenciais do caso</li>
+                </ol>
+            </div>
 
-        <h2>9. Lei Aplicável e Foro</h2>
-        <p>Estes termos são regidos pela legislação brasileira. Para dirimir quaisquer controvérsias, fica eleito o foro da Comarca de Ubajara/CE, renunciando a qualquer outro, por mais privilegiado que seja.</p>
+            <div class="section">
+                <h2>4. Honorários e Pagamento</h2>
+                <p>Os honorários advocatícios serão estabelecidos conforme contrato específico, podendo incluir:</p>
+                <ul>
+                    <li>Valor fixo por serviço</li>
+                    <li>Porcentagem sobre o valor da causa</li>
+                    <li>Honorários de sucumbência</li>
+                </ul>
+                <p>O pagamento deve ser efetuado conforme os prazos acordados, sob pena de suspensão dos serviços.</p>
+            </div>
 
-        <h2>10. Contato</h2>
-        <div class="contact-info">
-            <p><strong>Francisco Roney Advocacia Especializada</strong></p>
-            <p>Endereço: CE-187, 235 - Ubajara/CE</p>
-            <p>Telefone: (85) 99999-9999</p>
-            <p>E-mail: contato@franciscoroney.com.br</p>
-            <p>OAB/CE: [Número da OAB]</p>
+            <div class="section">
+                <h2>5. Confidencialidade</h2>
+                <p>Todas as informações compartilhadas entre cliente e advogado estão protegidas pelo sigilo profissional, conforme previsto no Estatuto da Advocacia (Lei nº 8.906/1994) e Código de Ética e Disciplina da OAB.</p>
+
+                <div class="highlight">
+                    <strong>Importante:</strong> A quebra do sigilo profissional é crime previsto no artigo 154 do Código Penal, punível com detenção de 3 meses a 1 ano.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>6. Limitação de Responsabilidade</h2>
+                <p>Francisco Roney Advocacia Especializada envida seus melhores esforços para prestar serviços de qualidade, porém não se responsabiliza por:</p>
+                <ul>
+                    <li>Resultados específicos em processos judiciais</li>
+                    <li>Perdas decorrentes de decisões tomadas pelo cliente</li>
+                    <li>Informações obtidas de terceiros</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. Propriedade Intelectual</h2>
+                <p>Todo o conteúdo deste site, incluindo textos, imagens, logotipos e materiais informativos, são propriedade de Francisco Roney Advocacia Especializada e estão protegidos por leis de direitos autorais.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Modificações dos Termos</h2>
+                <p>Estes Termos de Uso podem ser modificados a qualquer momento, mediante comunicação prévia aos clientes. O uso continuado dos serviços após as modificações constitui aceitação dos novos termos.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Lei Aplicável e Foro</h2>
+                <p>Estes termos são regidos pela legislação brasileira. Para dirimir quaisquer controvérsias, fica eleito o foro da Comarca de Ubajara/CE, renunciando a qualquer outro, por mais privilegiado que seja.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Contato</h2>
+                <div class="contact-info">
+                    <strong>Francisco Roney Advocacia Especializada</strong>
+                    <p>Endereço: CE-187, 235 - Ubajara/CE</p>
+                    <p>Telefone: (88) 99945-3173</p>
+                    <p>E-mail: contato@franciscoroney.adv.br</p>
+                    <p>OAB/CE: 12345</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>11. Vigência</h2>
+                <p>Estes Termos de Uso entram em vigor na data de sua publicação e permanecem válidos enquanto o cliente utilizar os serviços de Francisco Roney Advocacia Especializada.</p>
+            </div>
         </div>
 
-        <h2>11. Vigência</h2>
-        <p>Estes Termos de Uso entram em vigor na data de sua publicação e permanecem válidos enquanto o cliente utilizar os serviços de Francisco Roney Advocacia Especializada.</p>
-    </div>
-
-    <div class="last-updated">
-        <p>Última atualização: Janeiro de 2024</p>
-        <p>Francisco Roney Advocacia Especializada - Todos os direitos reservados</p>
+        <div class="last-updated">
+            <p>Última atualização: Janeiro de 2024</p>
+            <p>Francisco Roney Advocacia Especializada - Todos os direitos reservados</p>
+        </div>
     </div>
 </body>
 </html>

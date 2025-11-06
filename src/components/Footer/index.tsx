@@ -94,7 +94,7 @@ export function Footer() {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.open('./terms.html', '_blank', 'width=800,height=600,scrollbars=yes');
+                    window.open('./termos de uso/public/terms.html', '_blank', 'width=800,height=600,scrollbars=yes');
                   }}
                   className="legal-link"
                 >

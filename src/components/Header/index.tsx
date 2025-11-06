@@ -16,8 +16,10 @@ export function Header() {
             onClick={(e) => {
               e.preventDefault()
               const element = document.getElementById('home')
-              if (element)
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              if (element) {
+                const headerHeight = document.querySelector('header')?.offsetHeight || 120
+                window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' })
+              }
             }}
           >
             <img src={logoSmallImg} alt="logomarca Antonio" />
@@ -27,8 +29,10 @@ export function Header() {
             onClick={(e) => {
               e.preventDefault()
               const element = document.getElementById('home')
-              if (element)
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              if (element) {
+                const headerHeight = document.querySelector('header')?.offsetHeight || 120
+                window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' })
+              }
             }}
           >
             <img src={logoExtendsImg} alt="Logomarca Antonio" />
@@ -40,8 +44,10 @@ export function Header() {
             onClick={(e) => {
               e.preventDefault()
               const element = document.getElementById('home')
-              if (element)
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              if (element) {
+                const headerHeight = document.querySelector('header')?.offsetHeight || 120
+                window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' })
+              }
             }}
           >
             <SmallInvisibleButton>Home</SmallInvisibleButton>
@@ -51,8 +57,10 @@ export function Header() {
             onClick={(e) => {
               e.preventDefault()
               const element = document.getElementById('services')
-              if (element)
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              if (element) {
+                const headerHeight = document.querySelector('header')?.offsetHeight || 120
+                window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' })
+              }
             }}
           >
             <SmallInvisibleButton>Áreas de atuação</SmallInvisibleButton>
@@ -62,8 +70,10 @@ export function Header() {
             onClick={(e) => {
               e.preventDefault()
               const element = document.getElementById('cta')
-              if (element)
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              if (element) {
+                const headerHeight = document.querySelector('header')?.offsetHeight || 120
+                window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' })
+              }
             }}
           >
             <SmallInvisibleButton>Sobre mim</SmallInvisibleButton>
@@ -73,8 +83,10 @@ export function Header() {
             onClick={(e) => {
               e.preventDefault()
               const element = document.getElementById('videos')
-              if (element)
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              if (element) {
+                const headerHeight = document.querySelector('header')?.offsetHeight || 120
+                window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' })
+              }
             }}
           >
             <SmallInvisibleButton>Vídeos</SmallInvisibleButton>
