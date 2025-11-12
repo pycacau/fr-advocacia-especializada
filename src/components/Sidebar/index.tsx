@@ -35,18 +35,18 @@ export function Sidebar() {
       >
         <SidebarContent>
           <nav>
-            <a href="#home">
+            <a href="#home" onClick={() => setVisibleLeft(false)}>
               <SmallInvisibleButton>Home</SmallInvisibleButton>
             </a>
-            <a href="#cta">
+            <a href="#cta" onClick={() => setVisibleLeft(false)}>
               <SmallInvisibleButton>Sobre mim</SmallInvisibleButton>
             </a>
-            <a href="#services">
+            <a href="#services" onClick={() => setVisibleLeft(false)}>
               <SmallInvisibleButton>Áreas de atuação</SmallInvisibleButton>
             </a>
 
             <a
-              href="http://api.whatsapp.com/send?1=pt_BR&phone=5588999453173"
+              href="https://api.whatsapp.com/send?phone=5588999453173"
               target="_blank"
               rel="noreferrer"
               onClick={() => setVisibleLeft(false)}
@@ -57,21 +57,21 @@ export function Sidebar() {
             <nav className="socialNav">
               <a
                 target="_blank"
-                href="https://www.linkedin.com/in/antonio-junior-adv/"
+                href="http://linkedin.com/in/francisco-roney-de-sousa-ribeiro-33aa9185/?originalSubdomain=br"
                 rel="noreferrer"
               >
                 <img width={40} height={40} src={linkedinImg} alt="linkedin" />
               </a>
               <a
                 target="_blank"
-                href="https://www.facebook.com/antoniojradv"
+                href="http://facebook.com/nsfadvogados/"
                 rel="noreferrer"
               >
                 <img width={40} height={40} src={faceImg} alt="facebook" />
               </a>
               <a
                 target="_blank"
-                href="https://www.instagram.com/antoniojunioradvocacia/"
+                href="https://www.instagram.com/roneysousa/"
                 rel="noreferrer"
               >
                 <img width={40} height={40} src={instaImg} alt="instagram" />

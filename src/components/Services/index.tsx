@@ -22,11 +22,18 @@ export function Services() {
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0 }
     )
 
-    if (headerRef.current) observer.observe(headerRef.current)
-    if (cardsRef.current) observer.observe(cardsRef.current)
+    if (headerRef.current) {
+      observer.observe(headerRef.current)
+      // Trigger animation immediately for header if it's in view
+      headerRef.current.classList.add('animate-in')
+    }
+
+    // Observe each service card individually
+    const cards = document.querySelectorAll('.service-card')
+    cards.forEach(card => observer.observe(card))
 
     return () => observer.disconnect()
   }, [])

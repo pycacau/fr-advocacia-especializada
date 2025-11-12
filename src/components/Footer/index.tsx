@@ -102,7 +102,7 @@ export function Footer() {
                 </a>
                 <p className="license-text">Licença: MIT</p>
                 <div className="oab-badge">
-                  <span className="oab-number">OAB/SP 123.456</span>
+                  <span className="oab-number">OAB/CE 23.123</span>
                 </div>
               </div>
             </div>

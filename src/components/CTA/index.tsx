@@ -86,6 +86,10 @@ export function CTA() {
               <img src={courtIcon} alt="Professor na VIASAPIENS" className="credential-icon" />
               <span><a href="https://www.viasapiens.com.br/" target="_blank" rel="noopener noreferrer">Professor na VIASAPIENS</a></span>
             </div>
+            <div className="credential-item">
+              <img src={courtIcon} alt="OAB/CE 23.123" className="credential-icon" />
+              <span>OAB/CE 23.123</span>
+            </div>
           </div>
         </div>
         <img className="branchBg" src={branchBgImg} alt="ramo de fundo" />

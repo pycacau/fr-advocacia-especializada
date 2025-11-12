@@ -38,7 +38,7 @@ export const DefaultButton = styled.button`
 
   &:hover {
     background: ${(props) => props.theme.primaryDark};
-    transform: translateY(-15px) scale(1.08) rotateX(8deg) rotateY(5deg);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 20px 50px rgba(31, 41, 55, 0.8),
       0 0 100px rgba(31, 41, 55, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
@@ -64,12 +64,13 @@ export const SmallOutlineButton = styled(DefaultButton)`
 `
 export const SmallInvisibleButton = styled(DefaultButton)`
   padding: 0.62rem 2rem;
-  background: transparent;
+  background: ${(props) => props.theme.primaryDefault};
 
-  border: 1px solid transparent;
+  border: 1px solid ${(props) => props.theme.primaryDefault};
   border-radius: 6px;
 
   &:hover {
     background: ${(props) => props.theme.primaryDark};
+    border: 1px solid transparent;
   }
 `

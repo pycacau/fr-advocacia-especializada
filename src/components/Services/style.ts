@@ -13,6 +13,7 @@ export const ServicesContainer = styled.section`
   overflow: visible;
 
   margin-bottom: 0;
+  scroll-margin-top: 120px;
 
   /* Fundo com gradiente sutil */
   &::before {
@@ -57,6 +58,14 @@ export const ServicesContainer = styled.section`
     position: relative;
     z-index: 1;
 
+    &.animate-in .services-title {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    &.animate-in .services-subtitle {
+      animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    }
+
     .services-title {
       color: ${(props) => props.theme.gray100};
       font-family: 'Lato', sans-serif;
@@ -66,7 +75,6 @@ export const ServicesContainer = styled.section`
       text-align: center;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 0.8s ease-out 0.2s forwards;
 
       background: linear-gradient(
         135deg,
@@ -81,10 +89,7 @@ export const ServicesContainer = styled.section`
 
       position: relative;
 
-      /* Brilho pulsante */
-      animation:
-        fadeInUp 0.8s ease-out 0.2s forwards,
-        textGlow 3s ease-in-out infinite 1s;
+      /* Brilho pulsante removido */
 
       &::after {
         content: '';
@@ -115,7 +120,6 @@ export const ServicesContainer = styled.section`
       text-align: center;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 0.8s ease-out 0.4s forwards;
 
       max-width: 635px;
       position: relative;
@@ -249,8 +253,9 @@ export const ServiceCard = styled.div`
 
   .service-card {
     opacity: 0;
-    transform: translateY(50px) scale(0.9);
-    animation: fadeInUpScale 0.8s ease-out forwards;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-play-state: paused;
   }
 
   h3 {
