@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { FaBalanceScale, FaUsers, FaStar, FaGraduationCap, FaComments, FaHandshake, FaFileContract, FaClock } from 'react-icons/fa'
 import { ExperienceContainer, HeaderSection, SnakeContainer, StatCard } from './style'
 
@@ -13,23 +13,44 @@ interface StatData {
 
 function CountingNumber({ target, suffix, duration = 2000, className }: { target: number; suffix: string; duration?: number; className?: string }) {
   const [count, setCount] = useState(0)
+  const [hasStarted, setHasStarted] = useState(false)
+  const elementRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    let startTime: number
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime
-      const progress = Math.min((currentTime - startTime) / duration, 1)
-      const easeOut = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.floor(easeOut * target))
+    if (hasStarted) return
 
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasStarted) {
+            setHasStarted(true)
+            let startTime: number
+            const animate = (currentTime: number) => {
+              if (!startTime) startTime = currentTime
+              const progress = Math.min((currentTime - startTime) / duration, 1)
+              const easeOut = 1 - Math.pow(1 - progress, 3)
+              setCount(Math.floor(easeOut * target))
+
+              if (progress < 1) {
+                requestAnimationFrame(animate)
+              }
+            }
+            requestAnimationFrame(animate)
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
     }
-    requestAnimationFrame(animate)
-  }, [target, duration])
 
-  return <span className={className}>{count}{suffix}</span>
+    return () => observer.disconnect()
+  }, [target, duration, hasStarted])
+
+  return <span ref={elementRef} className={className}>{count}{suffix}</span>
 }
 
 export function Experience() {

@@ -13,7 +13,6 @@ export const ServicesContainer = styled.section`
   overflow: visible;
 
   margin-bottom: 0;
-  scroll-margin-top: 120px;
 
   /* Fundo com gradiente sutil */
   &::before {

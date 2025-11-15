@@ -64,6 +64,7 @@ export const SocialProofContainer = styled.section`
     padding: 0 2rem;
     position: relative;
     z-index: 1;
+    pointer-events: auto;
   }
 
   @media (max-width: 1024px) {
@@ -122,6 +123,8 @@ export const VideoCard = styled.div`
   backdrop-filter: blur(20px);
   overflow: hidden;
   transform-style: preserve-3d;
+  isolation: isolate;
+  pointer-events: auto;
 
   &::before {
     content: '';
@@ -138,6 +141,8 @@ export const VideoCard = styled.div`
     border-radius: 20px;
     opacity: 0;
     transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
   }
 
   &:hover {
@@ -150,17 +155,50 @@ export const VideoCard = styled.div`
     &::before {
       opacity: 1;
     }
+
+    iframe {
+      pointer-events: auto;
+      z-index: 10;
+    }
   }
 
   iframe {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
     border: none;
     border-radius: 15px;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    display: block;
+    background: transparent;
+  }
+
+  .video-link-fallback {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: ${(props) => props.theme.gray200};
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 11;
+    pointer-events: auto;
+
+    &:hover {
+      color: ${(props) => props.theme.gray100};
+      text-decoration: underline;
+    }
   }
 
   @media (max-width: 768px) {
     padding: 0.5rem;
+
+    iframe {
+      aspect-ratio: 9 / 16;
+      min-height: 400px;
+    }
   }
 `
 

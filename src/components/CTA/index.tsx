@@ -80,15 +80,11 @@ export function CTA() {
             </div>
             <div className="credential-item">
               <img src={documentIcon} alt="Mestrando na UVA" className="credential-icon" />
-              <span><a href="https://www.uvace.edu.br/" target="_blank" rel="noopener noreferrer">Mestrando na UVA</a></span>
+              <span><a href="https://www.uva.ce.gov.br/" target="_blank" rel="noopener noreferrer">Mestrando na UVA</a></span>
             </div>
             <div className="credential-item">
               <img src={courtIcon} alt="Professor na VIASAPIENS" className="credential-icon" />
-              <span><a href="https://www.viasapiens.com.br/" target="_blank" rel="noopener noreferrer">Professor na VIASAPIENS</a></span>
-            </div>
-            <div className="credential-item">
-              <img src={courtIcon} alt="OAB/CE 23.123" className="credential-icon" />
-              <span>OAB/CE 23.123</span>
+              <span><a href="https://site.faculdadeviasapiens.com.br/" target="_blank" rel="noopener noreferrer">Professor na VIASAPIENS</a></span>
             </div>
           </div>
         </div>

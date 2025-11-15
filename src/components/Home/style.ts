@@ -6,6 +6,7 @@ export const HomeContainer = styled.section`
   justify-content: flex-start;
   position: relative;
   overflow: visible;
+  z-index: 0;
 
   width: 100%;
   max-width: 1224px;
@@ -23,7 +24,7 @@ export const HomeContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    z-index: 10;
+    z-index: 5;
     pointer-events: auto;
 
     a {
@@ -106,8 +107,7 @@ export const HomeContainer = styled.section`
         padding: 0.6rem;
 
         img {
-          width: 28px;
-          height: 28px;
+
         }
       }
     }
@@ -130,13 +130,15 @@ export const HomeContainer = styled.section`
       radial-gradient(circle at 80% 20%, rgba(145, 145, 145, 0.01) 0%, transparent 50%);
     animation: backgroundPulse 20s ease-in-out infinite;
     z-index: 0;
+    pointer-events: none;
   }
 
   .branchBg {
     position: absolute;
     left: -9%;
-    top: 0.15%;
+  
     z-index: 0;
+    pointer-events: none;
     transform: scaleX(-1);
     filter: drop-shadow(0 0 20px rgba(145, 145, 145, 0.3));
     animation: branchFloat 6s ease-in-out infinite;
@@ -152,13 +154,15 @@ export const HomeContainer = styled.section`
       0 0 60px rgba(163, 145, 133, 0.1),
       inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     position: relative;
+    pointer-events: none;
   }
 
   .paralaxContainer {
     position: absolute;
     right: 10.5%;
     top: 2rem;
-    z-index: 100;
+    z-index: 0;
+    pointer-events: none;
 
     animation: showElementLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -173,6 +177,8 @@ export const HomeContainer = styled.section`
     height: 110px;
     right: -40%;
     top: 70%;
+    z-index: 0;
+    pointer-events: none;
 
     animation: showElementTop 1.4s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -404,7 +410,7 @@ export const HomeContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  z-index: 2;
+  z-index: 1;
   position: relative;
 
   max-width: 550px;

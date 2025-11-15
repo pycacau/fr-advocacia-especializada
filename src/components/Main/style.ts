@@ -27,6 +27,7 @@ export const MainContainer = styled.main`
     opacity: 0.3;
     filter: blur(1px) drop-shadow(0 0 20px rgba(145, 145, 145, 0.2));
     z-index: 0;
+    pointer-events: none;
     animation: branchFloat 6s ease-in-out infinite;
   }
 
@@ -100,13 +101,14 @@ export const ChatPopup = styled.div`
   bottom: 2rem;
   right: 2rem;
   z-index: 1000;
+  pointer-events: auto;
 
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 820px) {
-    display: none;
+    display: flex;
   }
 
   .whatsapp-link {
@@ -145,6 +147,8 @@ export const ChatPopup = styled.div`
         transparent
       );
       transition: left 0.6s ease;
+      pointer-events: none;
+      z-index: -1;
     }
 
     &:hover::before {
@@ -184,6 +188,7 @@ export const ChatPopup = styled.div`
       border: 2px solid #25d366;
       border-radius: 50%;
       opacity: 0;
+      pointer-events: none;
       animation: pulse 2s infinite;
     }
 

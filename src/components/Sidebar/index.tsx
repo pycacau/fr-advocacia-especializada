@@ -35,14 +35,57 @@ export function Sidebar() {
       >
         <SidebarContent>
           <nav>
-            <a href="#home" onClick={() => setVisibleLeft(false)}>
+            <a 
+              href="#home" 
+              onClick={(e) => {
+                e.preventDefault()
+                setVisibleLeft(false)
+                const element = document.getElementById('home')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }}
+            >
               <SmallInvisibleButton>Home</SmallInvisibleButton>
             </a>
-            <a href="#cta" onClick={() => setVisibleLeft(false)}>
+            <a 
+              href="#cta" 
+              onClick={(e) => {
+                e.preventDefault()
+                setVisibleLeft(false)
+                const element = document.getElementById('cta')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }}
+            >
               <SmallInvisibleButton>Sobre mim</SmallInvisibleButton>
             </a>
-            <a href="#services" onClick={() => setVisibleLeft(false)}>
+            <a 
+              href="#services" 
+              onClick={(e) => {
+                e.preventDefault()
+                setVisibleLeft(false)
+                const element = document.getElementById('services')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }}
+            >
               <SmallInvisibleButton>Áreas de atuação</SmallInvisibleButton>
+            </a>
+            <a 
+              href="#videos" 
+              onClick={(e) => {
+                e.preventDefault()
+                setVisibleLeft(false)
+                const element = document.getElementById('videos')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }}
+            >
+              <SmallInvisibleButton>Vídeos</SmallInvisibleButton>
             </a>
 
             <a

@@ -1,107 +1,102 @@
-import React, { useEffect, useRef } from 'react'
-import { HeaderContainer, HeaderContent, LogoContainer, Nav, NavLink } from './style'
+import { HeaderContainer, HeaderContent, LogoContainer } from './style'
 import logoSmallImg from '../../assets/logo_small.svg'
 import logoExtendsImg from '../../assets/logo_extends.svg'
+import linkedinImg from '../../assets/linkedin_icon.svg'
+import faceImg from '../../assets/face_icon.svg'
+import instaImg from '../../assets/insta_icon.svg'
 import { SmallInvisibleButton, SmallOutlineButton } from '../Buttons/Buttons'
 
 export function Header() {
-  const headerRef = useRef<HTMLElement | null>(null)
-
-  useEffect(() => {
-    const setScrollPadding = () => {
-      const h = headerRef.current?.offsetHeight || 120
-      try {
-        document.documentElement.style.scrollPaddingTop = `${h}px`
-      } catch {
-        // fallback silencioso
-      }
-    }
-
-    setScrollPadding()
-    const onResize = () => setScrollPadding()
-    window.addEventListener('resize', onResize)
-    return () => {
-      window.removeEventListener('resize', onResize)
-      try {
-        document.documentElement.style.scrollPaddingTop = ''
-      } catch {}
-    }
-  }, [])
-
-  const wait = (ms: number) => new Promise((res) => setTimeout(res, ms))
-
-  const findElement = (id: string) =>
-    document.getElementById(id) ||
-    document.querySelector(`[name="${id}"]`) ||
-    document.querySelector(`[data-section="${id}"]`) ||
-    null
-
-  const doScrollTo = (el: Element) => {
-    const headerHeight = headerRef.current?.offsetHeight || 120
-    const elementPosition = (el as HTMLElement).getBoundingClientRect().top + window.scrollY
-    const target = elementPosition - headerHeight
-    window.scrollTo({ top: target, behavior: 'smooth' })
-  }
-
-  const scrollToSection = (id: string) => async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-
-    // tentativa imediata + retries (conteúdo assíncrono)
-    for (let i = 0; i < 12; i++) {
-      const el = findElement(id)
-      if (el) {
-        doScrollTo(el)
-        return
-      }
-      // small delay antes da próxima tentativa
-      await wait(60)
-    }
-
-    // fallback: atualiza hash e tenta novamente depois
-    try {
-      history.replaceState(null, '', `#${id}`)
-    } catch {
-      window.location.hash = `#${id}`
-    }
-
-    await wait(120)
-    const el = findElement(id)
-    if (el) doScrollTo(el)
-  }
-
   return (
-    <HeaderContainer ref={headerRef as any}>
+    <HeaderContainer>
       <HeaderContent>
         <LogoContainer>
-          <NavLink href="#home" onClick={scrollToSection('home')}>
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById('home')
+              if (element)
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+          >
             <img src={logoSmallImg} alt="logomarca Antonio" />
-          </NavLink>
-          <NavLink href="#home" onClick={scrollToSection('home')} className="extended">
+          </a>
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById('home')
+              if (element)
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+          >
             <img src={logoExtendsImg} alt="Logomarca Antonio" />
-          </NavLink>
+          </a>
         </LogoContainer>
+        <nav>
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              const element = document.getElementById('home')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+          >
+            <SmallInvisibleButton onClick={(e) => e.stopPropagation()}>Home</SmallInvisibleButton>
+          </a>
+          <a
+            href="#services"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              const element = document.getElementById('services')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+          >
+            <SmallInvisibleButton onClick={(e) => e.stopPropagation()}>Áreas de atuação</SmallInvisibleButton>
+          </a>
+          <a
+            href="#cta"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              const element = document.getElementById('cta')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+          >
+            <SmallInvisibleButton onClick={(e) => e.stopPropagation()}>Sobre mim</SmallInvisibleButton>
+          </a>
+          <a
+            href="#videos"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              const element = document.getElementById('videos')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+          >
+            <SmallInvisibleButton onClick={(e) => e.stopPropagation()}>Vídeos</SmallInvisibleButton>
+          </a>
 
-        <Nav>
-          <NavLink href="#home" onClick={scrollToSection('home')}>
-            <SmallInvisibleButton>Home</SmallInvisibleButton>
-          </NavLink>
-          <NavLink href="#services" onClick={scrollToSection('services')}>
-            <SmallInvisibleButton>Áreas de atuação</SmallInvisibleButton>
-          </NavLink>
-          <NavLink href="#cta" onClick={scrollToSection('cta')}>
-            <SmallInvisibleButton>Sobre mim</SmallInvisibleButton>
-          </NavLink>
-          <NavLink href="#videos" onClick={scrollToSection('videos')}>
-            <SmallInvisibleButton>Vídeos</SmallInvisibleButton>
-          </NavLink>
-          <NavLink
+          <a
             href="https://api.whatsapp.com/send?phone=5588999453173"
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
           >
-            <SmallOutlineButton>Entrar em contato</SmallOutlineButton>
-          </NavLink>
-        </Nav>
+            <SmallOutlineButton onClick={(e) => e.stopPropagation()}>Entrar em contato</SmallOutlineButton>
+          </a>
+        </nav>
       </HeaderContent>
     </HeaderContainer>
   )
